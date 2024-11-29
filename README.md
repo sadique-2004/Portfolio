@@ -1,8 +1,6 @@
 <h1 align="center">🌟 Sadique.Dev - Portfolio Website 🌟</h1>
 
-<div align="center">
-  <iframe width="100%" height="400" src="https://www.youtube.com/embed/xfHMwGaAnd0" title="Sadique.Dev Preview" frameborder="0" allowfullscreen></iframe>
-</div>
+[![Sadique.Dev Preview](https://img.youtube.com/vi/xfHMwGaAnd0/0.jpg)](https://youtu.be/xfHMwGaAnd0)  
 
 <p align="center">
   Welcome to <b>Sadique.Dev</b>, my personal portfolio website! This platform is designed to showcase my <b>development skills</b>, <b>projects</b>, <b>educational background</b>, <b>certifications</b>, and <b>professional experiences</b>. It provides an interactive and visually appealing interface to highlight my journey and achievements in the world of web development.
