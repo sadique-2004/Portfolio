@@ -1,20 +1,13 @@
 # 🌟 Sadique.Dev - Portfolio Website 🌟  
 
+[![Sadique.Dev Preview](https://img.youtube.com/vi/xfHMwGaAnd0/0.jpg)](https://youtu.be/xfHMwGaAnd0?si=k7NOi9diI72FzUsK)  
+
 Welcome to **Sadique.Dev**, my personal portfolio website! This platform is designed to showcase my **development skills**, **projects**, **educational background**, **certifications**, and **professional experiences**. It provides an interactive and visually appealing interface to highlight my journey and achievements in the world of web development.  
 
 ---
 
 ## 🌐 Live Demo  
 Explore the live version of my portfolio here: [Sadique.Dev](https://sadiquedev.netlify.app/)  
-
----
-
-## 🎥 Website Preview  
-Take a quick tour of my portfolio in action!  
-
-[![Sadique.Dev Preview](https://img.shields.io/badge/Watch%20Preview-Click%20Here-blue?style=flat-square)](https://your-video-link.mp4)  
-
-*🛠 To embed the video, ensure your `.mp4` file is uploaded to the repository or hosted externally.*  
 
 ---
 
@@ -36,15 +29,8 @@ Take a quick tour of my portfolio in action!
 
 ---
 
-## 📂 Folder Structure  
-```plaintext  
-├── public/  
-│   ├── index.html         # Main HTML file  
-│   ├── assets/            # Static assets (images, videos, etc.)  
-├── src/  
-│   ├── components/        # React components  
-│   ├── pages/             # Page components  
-│   ├── App.js             # Application entry point  
-│   ├── index.js           # Main JavaScript file  
-│   ├── styles/            # Tailwind CSS customizations  
-├── package.json           # Project dependencies  
+## 🔧 Installation and Usage  
+1. Clone this repository:  
+   ```bash  
+   git clone https://github.com/username/portfolio.git  
+
