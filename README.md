@@ -5,7 +5,7 @@ Welcome to **Sadique.Dev**, my personal portfolio website! This platform is desi
 ---
 
 ## 🌐 Live Demo  
-Explore the live version of my portfolio here: [Sadique.Dev](https://your-website-link.com)  
+Explore the live version of my portfolio here: [Sadique.Dev](https://sadiquedev.netlify.app/)  
 
 ---
 
