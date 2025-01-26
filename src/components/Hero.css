@@ -1,0 +1,7 @@
+.dooted-background{
+    /* background-color: ; */
+    background-image: radial-gradient(GRAY 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+/* THERE IS SOME PROBLEM WHICH IS GENERATED AFTER RE RENDER */
