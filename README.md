@@ -21,14 +21,8 @@ Sadique.Dev is my personal portfolio website, designed to showcase my developmen
 
 ## 🔗 Live Demo
 
-Check out the live version of my portfolio: [ https://sadiquedev.netlify.app/ ](#)
+Check out the live version of my portfolio: [sadiquedev](https://sadiquedev.netlify.app/)
 
-## 📬 Contact
-
-Feel free to reach out for collaboration or inquiries:
-- **LinkedIn**: [Your LinkedIn Profile](#)
-- **Twitter/X**: [Your Twitter Handle](#)
-- **Email**: mdsadique044234@gmail.com
 
 ---
 
