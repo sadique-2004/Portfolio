@@ -26,4 +26,4 @@ Check out the live version of my portfolio: [sadiquedev](https://sadiquedev.netl
 
 ---
 
-Made with ❤️ by **Md Sadique**
+Made with ❤️ by **Mohammad Sadique**
