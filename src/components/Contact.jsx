@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Input } from "@material-tailwind/react";
+import ReplyAllOutlinedIcon from '@mui/icons-material/ReplyAllOutlined';
+import TextField from '@mui/material/TextField';
 
-import { 
-  EnvelopeIcon as MailIcon, 
-  PhoneIcon, 
+import {
+  EnvelopeIcon as MailIcon,
+  PhoneIcon,
   MapPinIcon as LocationMarkerIcon,
   CheckCircleIcon,
   XCircleIcon
@@ -24,7 +25,7 @@ const Contact = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    
+
     if (!formData.name.trim()) {
       newErrors.name = 'Name is required';
     }
@@ -51,10 +52,10 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (validateForm()) {
       setIsSubmitting(true);
-      
+
       try {
         const response = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
@@ -122,16 +123,16 @@ const Contact = () => {
     {
       icon: LocationMarkerIcon,
       title: 'Location',
-      content: 'Bela Adam, Vaishali, Bihar, 843114, India',
+      content: 'Patepur, Vaishali, Bihar, 843114, India',
     },
   ];
 
   return (
     <section id="contact" className="py-20 bg-white dark:bg-gray-900 relative">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center opacity-10 dark:opacity-5"
-        style={{ 
+        style={{
           backgroundImage: 'url("https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80")',
         }}
       />
@@ -209,96 +210,85 @@ const Contact = () => {
             className="lg:col-span-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8"
           >
 
-            
+
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
-              Send Me a Message
+              <ReplyAllOutlinedIcon className='text-blue-500' /> Send Me a Message
             </h3>
+
             <form onSubmit={handleSubmit} className="space-y-6">
-              
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
-                />
-                {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name}</p>}
-              </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="john.doe@example.com"
-                  className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
-                />
-                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email}</p>}
-              </div>
+              <TextField
+                id="name"
+                name="name"
+                type="text"
+                size="small"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="John Doe"
+                label="Name"
+                fullWidth variant="outlined"
+                error={Boolean(errors.name)}  // Highlights the field in red if error exists
+                helperText={errors.name || ''} // Displays error message below the field
+                inputProps={{ pattern: "[A-Za-z ]*" }}
+              />
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Subject
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Project Collaboration Opportunity"
-                  className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
-                />
-                {errors.subject && <p className="mt-1 text-sm text-red-500">{errors.subject}</p>}
-              </div>
+              <TextField
+                // type="email"
+                id="email"
+                name="email"
+                size="small"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="john@gmail.com"
+                label="Email"
+                fullWidth variant="outlined"
+                error={Boolean(errors.email)}  // Highlights the field in red if error exists
+                helperText={errors.email || ''} // Displays error message below the field
+              />
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Hi Sadique, I came across your portfolio and I'm impressed with your work. I'd love to discuss a potential collaboration on..."
-                  className={`w-full px-4 py-2 rounded-lg border ${
-                    errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
-                  } focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white`}
-                />
-                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message}</p>}
-              </div>
+              <TextField
+                id="subject"
+                name="subject"
+                type="text"
+                size="small"
+                value={formData.subject}
+                onChange={handleChange}
+                placeholder="Project Collaboration Opportunity"
+                label="Subject"
+                fullWidth variant="outlined"
+                error={Boolean(errors.subject)}  // Highlights the field in red if error exists
+                helperText={errors.subject || ''} // Displays error message below the field
+                inputProps={{ pattern: "[A-Za-z ]*" }}
+              />
+
+              <TextField
+                id="message"
+                name="message"
+                label="Message"
+                multiline
+                rows={3}
+                value={formData.message}
+                onChange={handleChange}
+                placeholder="Hi Sadique, I came across your portfolio and I'm impressed with your work. I'd love to discuss a potential collaboration on..."
+                fullWidth
+                variant="outlined"
+                error={Boolean(errors.message)}
+                helperText={errors.message || ""}
+              />
+
 
               <div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full px-6 py-3 rounded-lg text-white font-medium ${
-                    isSubmitting
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-blue-600 hover:bg-blue-700'
-                  } transition-colors duration-300`}
+                  className={`w-full px-6 py-3 rounded-lg text-white font-medium ${isSubmitting
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700'
+                    } transition-colors duration-300`}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+
               </div>
             </form>
 
@@ -309,11 +299,10 @@ const Contact = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
-                  className={`mt-4 p-4 rounded-lg ${
-                    submitStatus === 'success'
-                      ? 'bg-green-50 dark:bg-green-900'
-                      : 'bg-red-50 dark:bg-red-900'
-                  }`}
+                  className={`mt-4 p-4 rounded-lg ${submitStatus === 'success'
+                    ? 'bg-green-50 dark:bg-green-900'
+                    : 'bg-red-50 dark:bg-red-900'
+                    }`}
                 >
                   <div className="flex items-center">
                     {submitStatus === 'success' ? (
@@ -345,11 +334,10 @@ const Contact = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg ${
-              submitStatus === 'success'
-                ? 'bg-green-100 dark:bg-green-800'
-                : 'bg-red-100 dark:bg-red-800'
-            }`}
+            className={`fixed bottom-4 right-4 p-4 rounded-lg shadow-lg ${submitStatus === 'success'
+              ? 'bg-green-100 dark:bg-green-800'
+              : 'bg-red-100 dark:bg-red-800'
+              }`}
           >
             <div className="flex items-center space-x-2">
               {submitStatus === 'success' ? (
@@ -357,11 +345,10 @@ const Contact = () => {
               ) : (
                 <XCircleIcon className="h-6 w-6 text-red-600 dark:text-red-200" />
               )}
-              <p className={`text-sm ${
-                submitStatus === 'success'
-                  ? 'text-green-700 dark:text-green-200'
-                  : 'text-red-700 dark:text-red-200'
-              }`}>
+              <p className={`text-sm ${submitStatus === 'success'
+                ? 'text-green-700 dark:text-green-200'
+                : 'text-red-700 dark:text-red-200'
+                }`}>
                 {submitStatus === 'success'
                   ? 'Message sent successfully!'
                   : 'Failed to send message. Please try again.'}

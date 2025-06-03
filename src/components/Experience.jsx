@@ -1,80 +1,57 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { BriefcaseIcon, CalendarIcon, MapPinIcon as LocationMarkerIcon } from '@heroicons/react/24/outline';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  BriefcaseIcon,
+  CalendarIcon,
+  MapPinIcon as LocationMarkerIcon,
+} from "@heroicons/react/24/outline";
 
 const Experience = () => {
   const experiences = [
-
-
     {
-      company: 'Orange Antelopes',
-      position: 'Frontend Developer',
-      duration: 'Dec 2024 - Present',
-      location: 'Onsite',
+      company: "Self-Initiated Products",
+      position: "Founder & Solo Developer",
+      duration: "Apr 2024 – Present",
+      location: "Built from Home, India",
       description: [
-        'Working on production-level projects to deliver robust and scalable solutions.',
-        'Enhancing web interfaces with modern frontend technologies for optimal performance.',
-        'Learning from experienced developers through daily onsite collaboration and meetings.',
+        "Independently built and launched web products like @HackChain-Network, @LearnMate, and @Invoicify to solve real-world problems.",
+        "Owned the full product cycle — from ideation and development to deployment and iteration.",
+        "Integrated AI features and built user-first platforms with modern tech and clean UI/UX.",
+        "Demonstrated end-to-end execution across tech, design, and product strategy — all solo.",
       ],
-      
-    },    
-
-    {
-      company: 'BlinkFind',
-      position: 'Frontend Developer',
-      duration: 'Sep 2024 - Present',
-      location: 'Remote',
-      description: [
-        'Contributed significantly to building and optimizing the company website (BlinkFind), ensuring speed, scalability, and functionality.',
-        'Developed responsive, high-performance web interfaces to enhance cross-device usability.',
-        'Collaborated with teams to deliver innovative, user-focused solutions aligned with business objectives.',
-      ],
-      
     },
 
-    // {
-    //   company: 'GirlScript Summer of Code',
-    //   position: 'Open Source Contributor',
-    //   duration: 'Oct 2024 - Nov 2024 · 2 mos',
-    //   location: 'Remote',
-    //   description: [
-    //     'Contributed to real-world open-source projects, focusing on collaboration and quality code delivery.',
-    //     'Enhanced skills in Git, API development, and testing, while improving application functionality.',
-    //     'Ranked 424 out of 60,000 participants with a score of 1000, showcasing dedication to open-source growth.',
-    //   ],
-    // },
-
-    // {
-    //   company: 'Hacktoberfest',
-    //   position: 'Open Source Contributor',
-    //   duration: 'Oct 2024 - Nov 2024 · 2 mos',
-    //   location: 'Remote',
-    //   description: [
-    //     'Contributed to open-source projects by building responsive web pages using HTML, CSS, and JavaScript.',
-    //     'Styled and optimized web interfaces with Bootstrap and Tailwind, ensuring a seamless user experience.',
-    //     'Earned 2 Holopin badges out of 4 by contributing to meaningful projects and collaborating with fellow developers.',
-    //   ],
-    // },
+    {
+      company: "BlinkFind",
+      position: "Frontend Developer",
+      duration: "Sep 2024 - Present",
+      location: "Remote",
+      description: [
+        "Contributed significantly to building and optimizing the company website (BlinkFind), ensuring speed, scalability, and functionality.",
+        "Developed responsive, high-performance web interfaces to enhance cross-device usability.",
+        "Collaborated with teams to deliver innovative, user-focused solutions aligned with business objectives.",
+      ],
+    },
 
     {
-      company: 'Hacktoberfest & GirlScript Summer of Code',
-      position: 'Open Source Contributor',
-      duration: 'Oct 2024 - Nov 2024 · 2 mos',
-      location: 'Remote',
+      company: "Hacktoberfest & GirlScript Summer of Code",
+      position: "Open Source Contributor",
+      duration: "Oct 2024 - Nov 2024 · 2 mos",
+      location: "Remote",
       description: [
-        'Delivered high-quality code to real-world open-source projects, collaborating globally with developers.',
-        'Built and optimized responsive interfaces using HTML, CSS, Bootstrap, and Tailwind CSS.',
-        'Enhanced skills in Git, API development, and testing while improving project functionality.',
-        'Achieved a top rank (424/60,000) in GirlScript Summer of Code and earned 2 Holopin badges in Hacktoberfest.',
+        "Delivered high-quality code to real-world open-source projects, collaborating globally with developers.",
+        "Built and optimized responsive interfaces using HTML, CSS, JS, Bootstrap, and Tailwind CSS.",
+        "Enhanced skills in Git, API development, and testing while improving project functionality.",
+        "Achieved a top rank (424/60,000) in GirlScript Summer of Code and earned 4 badges in Hacktoberfest.",
       ],
-      
-      
-    }
-
+    },
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-dark-900 dark:to-dark-950 dooted-background">
+    <section
+      id="experience"
+      className="py-20 bg-gradient-to-br from-primary-50 to-secondary-50 dark:from-dark-900 dark:to-dark-950 dooted-background"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -100,8 +77,9 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`relative flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
+                className={`relative flex items-center ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full" />

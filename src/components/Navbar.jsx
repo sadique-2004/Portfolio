@@ -1,34 +1,56 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll } from 'framer-motion';
-import { MoonIcon, SunIcon, Bars3Icon as MenuIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
-import profileImage from '../assets/images/profile.jpg';
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { motion, useScroll } from "framer-motion";
+import {
+  MoonIcon,
+  SunIcon,
+  Bars3Icon as MenuIcon,
+  XMarkIcon as XIcon,
+} from "@heroicons/react/24/outline";
+import profileImage from "../assets/images/profile.jpg";
 
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
 
+  const Location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavLink = (sectionId) => {
+    if( Location.pathname !== "/"){
+      navigate("/");
+    }else{
+      const section = document.getElementById(sectionId);
+      if (section){
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+     // Close mobile menu if open
+     setIsMenuOpen(false);
+  };
+
   useEffect(() => {
     if (isDark) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
   const navItems = [
-    { name: 'Home', href: 'home' },
-    { name: 'About', href: 'about' },
-    { name: 'Projects', href: 'projects' },
-    { name: 'Experience', href: 'experience' },
-    { name: 'Education', href: 'education' },
-    { name: 'Certifications', href: 'certifications' },
-    { 
-      name: 'Hire Me', 
-      href: 'hire-me',
-      special: true 
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Projects", href: "projects" },
+    { name: "Experience", href: "experience" },
+    { name: "Education", href: "education" },
+    { name: "Certifications", href: "certifications" },
+    {
+      name: "Hire Me",
+      href: "hire-me",
+      special: true,
     },
-    { name: 'Contact', href: 'contact' },
+    { name: "Contact", href: "contact" },
   ];
 
   return (
@@ -40,11 +62,14 @@ const Navbar = () => {
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <a href="#home" className="flex items-center space-x-2 font-bold whitespace-nowrap">
-              <img 
-                src={profileImage} 
-                alt="Profile" 
-                className="w-8 h-8 rounded-full object-cover ring-2 ring-primary-500"
+            <a
+              onClick={() => handleNavLink("home")}
+              className="flex items-center space-x-2 font-bold whitespace-nowrap cursor-pointer"
+            >
+              <img
+                src={profileImage}
+                alt="Profile"
+                className="w-8 h-8 rounded-full object-cover ring-2 ring-primary-500 "
               />
               <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent text-xl">
                 Sadique.Dev
@@ -58,11 +83,11 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <a
                   key={item.name}
-                  href={`#${item.href}`}
-                  className={`px-2 lg:px-3 py-2 text-sm lg:text-base ${
-                    item.special 
-                      ? 'text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium shadow-lg hover:shadow-primary-500/25'
-                      : 'text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400'
+                  onClick={() => handleNavLink(item.href)}
+                  className={`px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer ${
+                    item.special
+                      ? "text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium shadow-lg hover:shadow-primary-500/25"
+                      : "text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
                   } transition-all duration-200 whitespace-nowrap`}
                 >
                   {item.name}
@@ -114,13 +139,14 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={`#${item.href}`}
-                className={`block px-3 py-2 ${
-                  item.special 
-                    ? 'text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium'
-                    : 'text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400'
+                className={`block px-3 py-2 cursor-pointer ${
+                  item.special
+                    ? "text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium "
+                    : "text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
                 }`}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  handleNavLink(item.href);
+                }}
               >
                 {item.name}
               </a>
