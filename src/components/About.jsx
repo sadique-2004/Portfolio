@@ -209,7 +209,7 @@ const About = () => {
 
             <div className="flex flex-col items-center md:items-start gap-6">
               <a
-                href="/MdSadique_Resume_WebDev.pdf"
+                href="/Md_Sadique_Software_Engineer_Resume.pdf"
                 download
                 className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
               >
