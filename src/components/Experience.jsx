@@ -9,15 +9,16 @@ import {
 const Experience = () => {
   const experiences = [
     {
-      company: "Self-Initiated Products",
-      position: "Founder & Solo Developer",
-      duration: "Apr 2024 – Present",
-      location: "Built from Home, India",
+      company: "HackChain Network",
+      position: "Founder & Community Lead",
+      duration: "March 2025 – Present",
+      location: "India",
       description: [
-        "Independently built and launched web products like @HackChain-Network, @LearnMate, and @Invoicify to solve real-world problems.",
-        "Owned the full product cycle — from ideation and development to deployment and iteration.",
-        "Integrated AI features and built user-first platforms with modern tech and clean UI/UX.",
-        "Demonstrated end-to-end execution across tech, design, and product strategy — all solo.",
+        "Founded HackChain Network — a developer-first tech community built to inspire, educate, and empower developers through events, resources, and collaboration.",
+        "Single-handedly developed the entire platform from scratch, handling everything from UI/UX design and frontend/backend development to deployment and maintenance.",
+        "Built a scalable and engaging platform using modern technologies to host events, share resources, and grow community collaboration.",
+        "Led all aspects of the community — from vision and branding to outreach, partnerships, and organizing developer-centric initiatives.",
+        "Established HackChain as a space where builders thrive by shipping real-world projects, learning in public, and growing together.",
       ],
     },
 
