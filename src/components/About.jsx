@@ -321,10 +321,11 @@ const About = () => {
               👋 Hello, I'm Md Sadique
             </motion.h3>
 
-            <div className="mt-12 text-justify max-w-4xl mx-auto">
+            <div className="mt-12 max-w-4xl mx-auto">
               <AnimatedText
                 text="I specialize in building modern web applications using cutting-edge technologies. As a passionate full-stack developer with expertise in the <b>MERN stack</b>, I have a strong foundation in frontend and backend development, ensuring seamless user experiences and solving real-world problems."
-                className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
+                 className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
+              
               />
             </div>
 

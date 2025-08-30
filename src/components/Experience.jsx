@@ -14,23 +14,7 @@ const Experience = () => {
       duration: "March 2025 – Present",
       location: "India",
       description: [
-        "Founded HackChain Network — a developer-first tech community built to inspire, educate, and empower developers through events, resources, and collaboration.",
-        "Single-handedly developed the entire platform from scratch, handling everything from UI/UX design and frontend/backend development to deployment and maintenance.",
-        "Built a scalable and engaging platform using modern technologies to host events, share resources, and grow community collaboration.",
-        "Led all aspects of the community — from vision and branding to outreach, partnerships, and organizing developer-centric initiatives.",
-        "Established HackChain as a space where builders thrive by shipping real-world projects, learning in public, and growing together.",
-      ],
-    },
-
-    {
-      company: "BlinkFind",
-      position: "Frontend Developer",
-      duration: "Sep 2024 - Present",
-      location: "Remote",
-      description: [
-        "Contributed significantly to building and optimizing the company website (BlinkFind), ensuring speed, scalability, and functionality.",
-        "Developed responsive, high-performance web interfaces to enhance cross-device usability.",
-        "Collaborated with teams to deliver innovative, user-focused solutions aligned with business objectives.",
+        "Founded HackChain Network — a developer-first tech community built to inspire, educate, and empower developers through events, resources, and collaboration."
       ],
     },
 
