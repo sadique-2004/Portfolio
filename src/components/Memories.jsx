@@ -98,7 +98,7 @@ const images = [
 
   { src: img6, width: 6, height: 4 },
   { src: img7, width: 4, height: 4 },
-  { src: img8, width: 6, height: 3 },
+  { src: img8, width: 8, height: 4 },
   { src: img9, width: 4, height: 4 },
   { src: img4, width: 4, height: 4 },
   { src: img10, width: 4, height: 3 },

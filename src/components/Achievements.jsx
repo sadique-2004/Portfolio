@@ -67,7 +67,7 @@ function Achievements({ achievements }) {
       </h3>
 
       {/* Slider */}
-      <div className="max-w-6xl mx-auto relative">
+      <div className="max-w-6xl mx-auto px-2 sm:px-4 relative">
         <Slider {...settings}>
           {achievements.map((achievement, index) => (
             <motion.div
@@ -76,26 +76,30 @@ function Achievements({ achievements }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="px-3"
+              className="px-2 sm:px-3"
             >
               <div
-                className={`rounded-2xl overflow-hidden shadow-2xl border-l-4 ${borderColors[index % borderColors.length]} 
-                  bg-white/70 dark:bg-gray-800/70 backdrop-blur-md hover:scale-105 transition transform`}
+                className={`rounded-2xl overflow-hidden shadow-xl border-l-4 ${borderColors[index % borderColors.length]
+                  } bg-white/80 dark:bg-gray-800/70 backdrop-blur-md 
+          hover:scale-[1.02] transition transform h-full flex`}
               >
-                <div className="p-8 pt-4 min-h-[250px] flex flex-col justify-between">
+                <div className="p-6 sm:p-8 flex flex-col justify-between w-full">
                   {/* Header */}
-                  <div className="flex items-center mb-3 gap-3">
-                    {/* <FontAwesomeIcon icon={achievement.icon} className="h-8 w-8 text-yellow-500 dark:text-yellow-400" /> */}
-                    <div>
-                      <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{achievement.title}</h4>
-                      {achievement.subtitle && (
-                        <p className="text-gray-700 dark:text-gray-300 text-sm">{achievement.subtitle}</p>
-                      )}
-                    </div>
+                  <div className="mb-4">
+                    <h4 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">
+                      {achievement.title}
+                    </h4>
+                    {achievement.subtitle && (
+                      <p className="text-gray-700 dark:text-gray-300 text-sm sm:text-base">
+                        {achievement.subtitle}
+                      </p>
+                    )}
                   </div>
 
                   {/* Description */}
-                  <p className="text-gray-600 dark:text-gray-300 pl-1 leading-relaxed flex-grow">{achievement.description}</p>
+                  <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base leading-relaxed flex-grow">
+                    {achievement.description}
+                  </p>
 
                   {/* Link */}
                   {achievement.link && (
@@ -103,7 +107,7 @@ function Achievements({ achievements }) {
                       href={achievement.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-yellow-500 dark:text-yellow-400 font-semibold hover:underline mt-3 block"
+                      className="text-yellow-500 dark:text-yellow-400 font-semibold hover:underline mt-4 block"
                     >
                       View LinkedIn Post
                     </a>
@@ -114,6 +118,8 @@ function Achievements({ achievements }) {
           ))}
         </Slider>
       </div>
+
+
     </div>
   );
 }
