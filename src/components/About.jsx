@@ -343,7 +343,7 @@ const About = () => {
               ) : (
                 <>
                   <AnimatedText
-                    text="I’ve independently launched impactful products like <b>HackChain Network</b>, <b>LearnMate</b>, and <b>Invoicify</b>, building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
+                    text="I’ve independently launched impactful product <b>HackChain Network</b>, building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
                     className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
                     style={{ textAlign: "justify" }}
                   />
@@ -373,7 +373,7 @@ const About = () => {
             {/* Desktop view - full content always visible */}
             <div className="hidden md:block">
               <AnimatedText
-                text="I’ve independently launched impactful products like <b>HackChain Network</b>, <b>LearnMate</b>, and <b>Invoicify</b>, building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
+                text="I’ve independently launched impactful product like <b>HackChain Network</b> building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
                 className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
                 style={{ textAlign: "justify" }}
               />
