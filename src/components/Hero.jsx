@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
 
+
 import "./Hero.css";
 
 const Hero = () => {
@@ -15,6 +16,7 @@ const Hero = () => {
         "Founder of HackChain.",
         "Web Dev Mentor (Soon).",
         "Future SDE.",
+        "Software Engineer.",
       ],
       typeSpeed: 90,
       backSpeed: 50,
@@ -37,18 +39,16 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
+
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#504953] dark:text-white mb-6 mt-12">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent">
+              👋 I'm{" "}
+              <span className="bg-gradient-to-r from-primary-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent animate-text-gradient">
                 Md Sadique
               </span>
             </h1>
-            <h1 className="text-2xl sm:text-2xl lg:text-4xl font-bold text-[#504953] dark:text-white mb-6">
-              <span
-                ref={typedElement}
-                className="bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent"
-              ></span>
-            </h1>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-6">
+              <span ref={typedElement} className="bg-gradient-to-r from-primary-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent"></span>
+            </h2>
             <p className="text-xl text-dark-600 dark:text-dark-300 mb-8">
               A passionate Full Stack Developer crafting innovative web
               solutions and bringing ideas to life through code.

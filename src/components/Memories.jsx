@@ -69,9 +69,9 @@ const images = [
   { src: img1, width: 6, height: 4 },
   { src: img2, width: 4, height: 3 },
   { src: img3, width: 8, height: 4 },
-  
+
   { src: img37, width: 4, height: 3 },
- 
+
   { src: img6, width: 6, height: 4 },
   { src: img7, width: 4, height: 4 },
   { src: img8, width: 6, height: 3 },
@@ -104,7 +104,7 @@ const images = [
   { src: img34, width: 4, height: 3 },
   { src: img35, width: 3, height: 3 },
   { src: img36, width: 5, height: 3 },
-   { src: img5, width: 4, height: 4 },
+  { src: img5, width: 4, height: 4 },
   { src: img39, width: 3, height: 3 },
   { src: img40, width: 6, height: 4 },
   { src: img41, width: 8, height: 4 },
@@ -135,23 +135,31 @@ const Memories = () => {
   return (
     <section className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-4"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          My Memories
-        </motion.h2>
-
-        <motion.p
-          className="text-lg text-center text-gray-700 dark:text-gray-300 mb-12 max-w-3xl mx-auto"
+        <motion.div
+          className="text-center mb-16 px-4 sm:px-6 lg:px-0"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3, duration: 0.5 }}
+          transition={{ duration: 0.7 }}
         >
-          A glimpse into the special moments I've experienced — from attending and organizing tech events, participating in hackathons, to cherishing college life. Each photo reflects a unique memory that has shaped my journey.
-        </motion.p>
+          <motion.h2
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold  mb-6"
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            📸 <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">My Memories</span>
+          </motion.h2>
+
+          <motion.p
+            className="text-md sm:text-lg lg:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
+            A glimpse into the <span className="font-semibold text-blue-600 dark:text-cyan-400">special moments</span> I've experienced — from attending and organizing tech events, participating in hackathons, to cherishing college life. Each photo reflects a <span className="font-semibold text-purple-500">unique memory</span> that has shaped my journey.
+          </motion.p>
+        </motion.div>
+
 
         <Gallery images={images} />
       </div>

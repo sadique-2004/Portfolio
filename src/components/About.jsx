@@ -15,6 +15,7 @@ import {
   faLink,
 } from "@fortawesome/free-solid-svg-icons";
 import profileImage from "../assets/images/profileImg.jpg";
+import Achievements from "./Achievements";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 20 },
@@ -26,6 +27,52 @@ const fadeInUp = {
     },
   },
 };
+
+const achievements = [
+  {
+    title: "Frontend Domination Hackathon",
+    subtitle: "Ranked 3rd | Team Lead | Book Tracker System Track",
+    description:
+      "Led a team to build the frontend end-to-end using React—no templates, no shortcuts. Competed against 300+ participants and secured 3rd place, demonstrating leadership, teamwork, and strong frontend skills.",
+    icon: faTrophy,
+    link: "https://www.linkedin.com/posts/mdsadique5_i-joined-an-online-hackathon-called-frontend-activity-7357405754984693761-NNwf?utm_source=share&utm_medium=member_desktop&rcm=ACoAADuBF8gBtYbQhRPJIF4Cx50ONtBHZpmX93w",
+  },
+  {
+    title: "Story Builder Hackathon",
+    subtitle: "Web3 Hackathon | Frontend Developer",
+    description:
+      "Developed the frontend for DecentraVault MVP – a decentralized DigiLocker. Learned on-chain IP, shared our idea, got a Story Protocol T-shirt, and connected with amazing mentors.",
+    icon: faTrophy,
+    link: "https://www.linkedin.com/posts/mdsadique5_web3-buildwithstory-storyprotocol-activity-7331790527148789760-qZ_D?utm_source=share&utm_medium=member_desktop&rcm=ACoAADuBF8gBtYbQhRPJIF4Cx50ONtBHZpmX93w",
+  },
+  {
+    title: "BuildIt Tour 2.0 – Microsoft",
+    subtitle: "Tech Event Attendee | AI Exploration",
+    description:
+      "Explored Agentic AI concepts and the Microsoft campus. Connected with SDEs, felt inspired by the environment, and motivated to keep building.",
+    icon: faTrophy,
+    link: "https://www.linkedin.com/posts/mdsadique5_microsoft-buildittour-ai-activity-7363781840584822784-mjUy?utm_source=share&utm_medium=member_desktop&rcm=ACoAADuBF8gBtYbQhRPJIF4Cx50ONtBHZpmX93w",
+  },
+  {
+    title: "Introduction to Blockchain & Anryton",
+    subtitle: "Event Organizer | College Event",
+    description:
+      "Organized a hands-on blockchain session for 170+ participants in collaboration with HackTour IND. Facilitated P2P token transfers and networking opportunities.",
+    icon: faTrophy,
+    link: "https://www.linkedin.com/posts/mdsadique5_blockchain-web3-cryptoevents-activity-7330833593478393857-l_0o?utm_source=share&utm_medium=member_desktop&rcm=ACoAADuBF8gBtYbQhRPJIF4Cx50ONtBHZpmX93w",
+  },
+  {
+    title: "Core Nexus Hackathon",
+    subtitle: "Lead Volunteer | Web3 Event",
+    description:
+      "Assisted 200+ hackers by providing real-time tech support, helping with Git/GitHub setup, and coordinating workflows. Led a volunteer team of 15–20, ensuring smooth execution and supporting participants throughout the hackathon.",
+    icon: faTrophy,
+    link: "https://www.linkedin.com/posts/mdsadique5_corenexus-web3spell-hackathonvibes-activity-7321047148953780224-0z5V?utm_source=share&utm_medium=member_desktop&rcm=ACoAADuBF8gBtYbQhRPJIF4Cx50ONtBHZpmX93w",
+  },
+];
+
+
+
 
 const AnimatedText = ({ text, className }) => {
   const processText = (text) => {
@@ -140,14 +187,6 @@ const About = () => {
     },
   ];
 
-  const achievements = [
-    {
-      title: "Open Source Contributor",
-      description:
-        "Participant in GirlScript Summer of Code 2024 and HacktoberFest 2024. Where I actively contribute to various open-source repositories",
-      icon: faTrophy,
-    },
-  ];
 
   const socialLinks = [
     {
@@ -181,77 +220,53 @@ const About = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent mb-4">
             About Me
           </h2>
-          {/* <div className="w-44 h-1 bg-gradient-to-r from-primary-500 to-secondary-500 mx-auto rounded-full"></div> */}
-          {/* <div className='flex flex-row-reverse h-1 w-full px-[200px] top-0 bg-[#504953]'>
 
-          </div> */}
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-4 mb-4">
-            A passionate Full Stack Developer with a love for creating elegant
-            solutions and meaningful web experiences.
+
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
+            A passionate Full Stack Developer creating elegant solutions and meaningful web experiences.
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeInUp}
-              className="flex-shrink-0"
-            >
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="w-64  h-64 rounded-full object-left-bottom shadow-lg border-4 border-[#4793D0]"
-              />
-            </motion.div>
+            <motion.img
+              src={profileImage}
+              alt="Md Sadique"
+              className="w-64 h-64 rounded-full shadow-xl border-4 border-gradient-to-tr from-blue-500 to-cyan-400 hover:scale-105 transition-transform duration-300"
+              whileHover={{ scale: 1.05 }}
+            />
 
             <div className="flex flex-col items-center md:items-start gap-6">
               <a
                 href="/Md_Sadique_Software_Engineer_Resume.pdf"
                 download
-                className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
               >
                 <FontAwesomeIcon icon={faDownload} className="w-5 h-5 mr-2" />
                 Download Resume
               </a>
 
               <a
-                className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
-                href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=mdsadique5"
+                href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
+                className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
               >
                 Follow me on LinkedIn
               </a>
-
-              <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              <div className="flex flex-wrap gap-2 mt-4">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group relative"
+                    className="group relative w-12 h-12 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 shadow-md border border-gray-200 dark:border-gray-600 hover:scale-110 hover:shadow-lg transition-all duration-300"
                   >
-                    <div
-                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 shadow-md 
-                                 border border-gray-200 dark:border-gray-600 
-                                 transform transition-all duration-300 
-                                 hover:scale-110 hover:shadow-lg hover:border-blue-500 dark:hover:border-blue-400"
-                    >
-                      <FontAwesomeIcon
-                        icon={link.icon}
-                        className="w-6 h-6 text-gray-600 dark:text-gray-300 
-                                 group-hover:text-blue-500 dark:group-hover:text-blue-400 
-                                 transition-colors duration-300"
-                      />
-                    </div>
-                    <span
-                      className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 
-                                   opacity-0 group-hover:opacity-100 transition-opacity duration-300 
-                                   text-sm text-gray-600 dark:text-gray-400 whitespace-nowrap"
-                    >
+                    <FontAwesomeIcon
+                      icon={link.icon}
+                      className="text-gray-600 dark:text-gray-300 group-hover:text-blue-500 dark:group-hover:text-cyan-400 transition-colors duration-300"
+                    />
+                    <span className="absolute -bottom-7 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 text-sm text-gray-600 dark:text-gray-400 transition-opacity duration-300">
                       {link.name}
                     </span>
                   </a>
@@ -266,8 +281,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View My Memories"
-              onClick={handleNavigate} // This will navigate to the memories page
-              // like after using react router dom i can add link and all now just need to improve the ui
+              onClick={handleNavigate}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -307,11 +321,12 @@ const About = () => {
               👋 Hello, I'm Md Sadique
             </motion.h3>
 
-            <AnimatedText
-              text="I specialize in building modern web applications using cutting-edge technologies. As a passionate full-stack developer with expertise in the <b>MERN stack</b>, I have a strong foundation in frontend and backend development, ensuring seamless user experiences and solving real-world problems."
-              className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed md:block justify justify-text"
-              style={{ textAlign: "justify" }}
-            />
+            <div className="mt-12 text-justify max-w-4xl mx-auto">
+              <AnimatedText
+                text="I specialize in building modern web applications using cutting-edge technologies. As a passionate full-stack developer with expertise in the <b>MERN stack</b>, I have a strong foundation in frontend and backend development, ensuring seamless user experiences and solving real-world problems."
+                className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
+              />
+            </div>
 
             {/* Mobile view content with read more */}
             <div className="md:hidden">
@@ -328,7 +343,7 @@ const About = () => {
                 <>
                   <AnimatedText
                     text="I’ve independently launched impactful products like <b>HackChain Network</b>, <b>LearnMate</b>, and <b>Invoicify</b>, building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
-                    className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
+                    className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
                     style={{ textAlign: "justify" }}
                   />
 
@@ -423,48 +438,16 @@ const About = () => {
           </div>
         </div>
 
+
+
+
         {/* Achievements Section */}
-        {/* <div>
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8 flex items-center justify-center gap-3">
-            <FontAwesomeIcon icon={faTrophy} className="h-8 w-8 text-yellow-500 dark:text-yellow-400" />
-            Achievements
-          </h3>
-          <div className="max-w-3xl mx-auto">
-            {achievements.map((achievement, index) => (
-              <motion.div
-                key={achievement.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      delay: index * 0.2,
-                      duration: 0.5
-                    }
-                  }
-                }}
-                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg mb-6 hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex items-center mb-4">
-                  <FontAwesomeIcon
-                    icon={achievement.icon}
-                    className="h-8 w-8 text-yellow-500 dark:text-yellow-400 mr-3"
-                  />
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {achievement.title}
-                  </h4>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 pl-11">
-                  {achievement.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div> */}
+        {/* Hackathons & Highlights Section */}
+        <Achievements achievements={achievements}/>
+
+
+
+
       </div>
     </section>
   );

@@ -8,7 +8,6 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Certifications from "./components/Certifications";
-import HireMe from "./components/HireMe";
 import Contact from "./components/Contact";
 import Memories from "./components/Memories";
 import Footer from "./components/Footer";
@@ -39,7 +38,6 @@ function App() {
               <>
                 <Hero />
                 <About />
-                <HireMe />
                 <Projects />
                 <Experience />
                 <Education />
