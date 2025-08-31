@@ -87,12 +87,17 @@ const Contact = () => {
   const offerings = [
     { title: "Frontend Wizardry", description: "React.js • Modern UI/UX • Pixel-Perfect Responsive Design", icon: faCode },
     { title: "Backend Magic", description: "Node.js • Express.js • MongoDB • APIs that never sleep", icon: faServer },
-    { title: "Available For", description: "Full-time Roles • Freelance Projects • Collabs with Awesome Devs", icon: faClock },
+    { title: "Available For", description: "Full-time Roles • Freelance Projects • Collabs with Devs", icon: faClock },
   ];
 
   const contactInfo = [
-    { icon: EnvelopeIcon, content: "mdsadique044234@gmail.com", href: "mailto:mdsadique044234@gmail.com" },
+    {
+      icon: EnvelopeIcon,
+      content: "mdsadique044234@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mdsadique044234@gmail.com"
+    },
   ];
+  
 
   return (
     <section
@@ -156,7 +161,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">📬 Quick Contact</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">📧 Reach Out Anytime</h3>
               <div className="space-y-4">
                 {contactInfo.map((item, index) => (
                   <a
@@ -183,10 +188,10 @@ const Contact = () => {
               <ReplyAllOutlinedIcon className="text-blue-500" /> Shoot Me a Message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <TextField name="name" label="Your Name" value={formData.name} onChange={handleChange} error={Boolean(errors.name)} helperText={errors.name || ""} fullWidth size="small" />
-              <TextField name="email" label="Email" value={formData.email} onChange={handleChange} error={Boolean(errors.email)} helperText={errors.email || ""} fullWidth size="small" />
-              <TextField name="subject" label="Subject" value={formData.subject} onChange={handleChange} error={Boolean(errors.subject)} helperText={errors.subject || ""} fullWidth size="small" />
-              <TextField name="message" label="Message" value={formData.message} onChange={handleChange} error={Boolean(errors.message)} helperText={errors.message || ""} fullWidth multiline rows={4} />
+              <TextField name="name" label="Your Name" value={formData.name} placeholder="Enter your full name"onChange={handleChange} error={Boolean(errors.name)} helperText={errors.name || ""} fullWidth size="small" />
+              <TextField name="email" label="Email" value={formData.email} placeholder="example@domain.com"onChange={handleChange} error={Boolean(errors.email)} helperText={errors.email || ""} fullWidth size="small" />
+              <TextField name="subject" label="Subject" value={formData.subject} placeholder="e.g. Hiring for a project, Collaboration idea"onChange={handleChange} error={Boolean(errors.subject)} helperText={errors.subject || ""} fullWidth size="small" />
+              <TextField name="message" label="Message" value={formData.message} placeholder="✍️ Write your message here (at least a few lines for clarity)" onChange={handleChange} error={Boolean(errors.message)} helperText={errors.message || ""} fullWidth multiline rows={4} />
 
               <button
                 type="submit"
@@ -197,7 +202,7 @@ const Contact = () => {
                     : "bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 shadow-lg hover:shadow-xl"
                 }`}
               >
-                {isSubmitting ? "Sending..." : "🚀 Send & Connect"}
+               {isSubmitting ? "On the Way..." : "Let’s Talk 🤝"}
               </button>
             </form>
           </motion.div>
@@ -224,7 +229,7 @@ const Contact = () => {
                 <XCircleIcon className="h-6 w-6 mr-2" />
               )}
               <p className="text-sm font-medium">
-                {submitStatus === "success" ? "🎉 Message sent successfully!" : "⚠️ Failed to send message."}
+                {submitStatus === "success" ? "😊 Got it! I’ll be in touch soon." : "⚠️ Failed to send message."}
               </p>
             </div>
           </motion.div>

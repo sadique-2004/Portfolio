@@ -468,8 +468,7 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2 
-                               bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg 
-                               hover:from-blue-700 hover:to-blue-600 transition-all duration-300"
+                               bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
                     >
                       <ExternalLinkIcon className="w-4 h-4" />
                       Live Demo
@@ -479,10 +478,11 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 px-4 py-2 
-                               border-2 border-gray-200 dark:border-gray-600 text-gray-700 
+                               border-2 border-gradient-to-r from-blue-500 to-cyan-400 dark:border-gray-600 text-gray-700 
                                dark:text-gray-300 rounded-lg hover:bg-gray-50 
                                dark:hover:bg-gray-600 transition-all duration-300 hover:border-primary-500"
-                    >
+
+                             >
                       <CodeBracketIcon className="w-4 h-4" />
                       View Code
                     </a>

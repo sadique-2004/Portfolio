@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
+import hey from "../assets/images/hey.gif";
 
 
 import "./Hero.css";
@@ -41,7 +42,7 @@ const Hero = () => {
           >
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#504953] dark:text-white mb-6 mt-12">
-              👋 I'm{" "}
+              <img src={hey} alt="Hey" className="w-16 h-16 inline mr-2" /> I'm{" "}
               <span className="bg-gradient-to-r from-primary-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent animate-text-gradient">
                 Sadique
               </span>
@@ -56,7 +57,8 @@ const Hero = () => {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#contact"
-                className="px-6 py-2 rounded-full bg-gradient-to-r from-primary-600 to-secondary-600 text-white hover:from-primary-700 hover:to-secondary-700 transition-all duration-300 shadow-lg hover:shadow-primary-500/25"
+                className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 text-white 
+                hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-primary-500/25"
               >
                 Get in Touch
               </a>

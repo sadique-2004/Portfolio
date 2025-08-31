@@ -85,7 +85,7 @@ const Navbar = () => {
                   onClick={() => handleNavLink(item.href)}
                   className={`px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer ${
                     item.special
-                      ? "text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium shadow-lg hover:shadow-primary-500/25"
+                      ? "text-white bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-primary-500/25 rounded-full font-medium"
                       : "text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
                   } transition-all duration-200 whitespace-nowrap`}
                 >

@@ -277,7 +277,10 @@ const About = () => {
 
           <div className="flex justify-center mt-4">
             <a
-              className="inline-flex items-center px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 cursor-pointer mt-3"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold 
+              rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none 
+              focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 cursor-pointer mt-3"
+
               target="_blank"
               rel="noopener noreferrer"
               aria-label="View My Memories"
@@ -324,8 +327,8 @@ const About = () => {
             <div className="mt-12 max-w-4xl mx-auto">
               <AnimatedText
                 text="I specialize in building modern web applications using cutting-edge technologies. As a passionate full-stack developer with expertise in the <b>MERN stack</b>, I have a strong foundation in frontend and backend development, ensuring seamless user experiences and solving real-world problems."
-                 className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
-              
+                className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
+
               />
             </div>
 
@@ -441,10 +444,8 @@ const About = () => {
 
 
 
-
-        {/* Achievements Section */}
         {/* Hackathons & Highlights Section */}
-        <Achievements achievements={achievements}/>
+        <Achievements achievements={achievements} />
 
 
 

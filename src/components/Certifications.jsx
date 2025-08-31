@@ -166,7 +166,7 @@ const Certifications = () => {
           >
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300"
+              className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
             >
               {showAll ? 'Show Less' : 'Show More Certifications'}
             </button>
