@@ -445,7 +445,10 @@ const About = () => {
 
 
         {/* Hackathons & Highlights Section */}
-        <Achievements achievements={achievements} />
+        <div className="hidden md:block ">
+           <Achievements achievements={achievements} />
+        </div>
+       
 
 
 

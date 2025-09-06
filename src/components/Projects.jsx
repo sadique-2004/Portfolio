@@ -49,7 +49,7 @@ const Projects = () => {
     {
       title: "HackChain Network",
       description:
-        "A community-driven platform to connect developers, creators, and hackers—form teams, discuss ideas, stay updated on hackathons, and win together.",
+        "A community for developers and innovators to connect, join teams, learn, and build impactful solutions through hackathons & meetups.",
       image: hackChainImage,
       technologies: [
         "React",
@@ -61,10 +61,12 @@ const Projects = () => {
         "OpenAI API",
         "clerk",
         "cloudinary",
+        "BotPress-bot",
+        "react-router-dom"
       ],
       liveLink: "https://hackchain.space/",
       codeLink: "https://github.com/sadique-2004/HackChain-Network",
-      status: "In Development",
+      status: "InDev",
       type: "Community",
     },
     // {
@@ -126,6 +128,9 @@ const Projects = () => {
         "MongoDB",
         "Express",
         "Tailwind",
+        "Clerk",
+        "BotPress-bot",
+        "react-router-dom"
       ],
       liveLink: "https://invoicify-nine.vercel.app/",
       codeLink: "https://github.com/sadique-2004/Invoicify",
