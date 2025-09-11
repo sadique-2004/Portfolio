@@ -48,6 +48,20 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
+
+      {/* Dotted background pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none 
+             bg-[radial-gradient(circle,hsla(0,0%,0%,0.86)_1px,transparent_1px)] 
+             dark:bg-[radial-gradient(circle,hsla(0,0%,100%,0.8)_1px,transparent_1px)]"
+        style={{
+          backgroundSize: '25px 25px',
+          opacity: 0.5
+        }}
+      />
+
+
+
       {/* ✅ Content - TOP */}
       <div className="section-container relative z-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

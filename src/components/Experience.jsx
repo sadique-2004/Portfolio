@@ -346,15 +346,16 @@ const Experience = () => {
       className="py-20 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 relative"
     >
       {/* Dotted background pattern */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
+      <div
+        className="absolute inset-0 pointer-events-none 
+             bg-[radial-gradient(circle,hsla(0,0%,0%,0.86)_1px,transparent_1px)] 
+             dark:bg-[radial-gradient(circle,hsla(0,0%,100%,0.8)_1px,transparent_1px)]"
         style={{
-          backgroundImage: `radial-gradient(circle, #000000 1px, transparent 1px)`,
           backgroundSize: '25px 25px',
-          opacity: 0.08
+          opacity: 1
         }}
       />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
         <motion.div
@@ -363,15 +364,15 @@ const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <motion.h2 
-            className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          <motion.h2
+            className="text-3xl sm:text-4xl font-bold text-blue-900 dark:text-white mb-4"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
             Work Experience
           </motion.h2>
-          <motion.div 
+          <motion.div
             className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 80 }}
@@ -391,12 +392,11 @@ const Experience = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative flex flex-col lg:flex-row items-center ${
-                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                }`}
+                className={`relative flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                  }`}
               >
                 {/* Logo on the timeline */}
-                <motion.div 
+                <motion.div
                   className="absolute lg:left-1/2 left-8 transform -translate-x-1/2 -translate-y-4 lg:translate-y-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg border-4 border-blue-100 dark:border-gray-700 overflow-hidden flex items-center justify-center z-20"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.2 }}
@@ -410,14 +410,13 @@ const Experience = () => {
 
                 {/* Card with proper margins */}
                 <div
-                  className={`mt-12 lg:mt-0 w-full lg:w-5/12 ${
-                    index % 2 === 0
+                  className={`mt-12 lg:mt-0 w-full lg:w-5/12 ${index % 2 === 0
                       ? "lg:mr-auto lg:pr-16" // Right side with margin from timeline
                       : "lg:ml-auto lg:pl-16" // Left side with margin from timeline
-                  }`}
+                    }`}
                 >
                   <motion.div
-                    whileHover={{ 
+                    whileHover={{
                       y: -5,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
                     }}
@@ -451,7 +450,7 @@ const Experience = () => {
                     {/* Description */}
                     <ul className="space-y-3">
                       {exp.description.map((item, i) => (
-                        <motion.li 
+                        <motion.li
                           key={i}
                           initial={{ opacity: 0, x: -20 }}
                           whileInView={{ opacity: 1, x: 0 }}
