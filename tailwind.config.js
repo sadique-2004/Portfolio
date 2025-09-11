@@ -45,6 +45,14 @@ module.exports = {
           950: '#020617',
         },
       },
+
+      extend: {
+        fontFamily: {
+          heading: ['"Russo One"', 'sans-serif'],  // <--- THIS is Russo One
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'], // <--- default body font
+        },
+      },
+      
       backgroundImage: {
         'gradient-primary': 'linear-gradient(to right, var(--tw-gradient-stops))',
         'gradient-secondary': 'linear-gradient(135deg, var(--tw-gradient-stops))',

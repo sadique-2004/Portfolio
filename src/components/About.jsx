@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { CodeBracketIcon, CommandLineIcon } from "@heroicons/react/24/outline";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
+import { Icon } from "@iconify/react";
+
 
 import {
   faGithub,
@@ -151,42 +153,52 @@ const About = () => {
     {
       category: "Frontend Development",
       items: [
-        "React.js",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Tailwind CSS",
-        "Bootstrap",
-        "Framer Motion",
-        "Material-UI",
+        { name: "HTML5", icon: "devicon-html5-plain colored" },
+        { name: "CSS3", icon: "devicon-css3-plain colored" },
+        { name: "Js (ES6)", icon: "devicon-javascript-plain colored" },
+        { name: "React.js", icon: "devicon-react-original colored" },
+        { name: "React Router", icon: "devicon-reactrouter-plain colored" },
+        { name: "Vite", icon: "devicon-vitejs-plain colored" },
+        { name: "Tailwind", icon: "devicon-tailwindcss-plain colored" },
+        { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" },
+        { name: "Framer Motion", icon: "devicon-figma-plain colored" },
+        { name: "Material UI", icon: "devicon-materialui-plain colored" },
       ],
       icon: CodeBracketIcon,
     },
     {
-      category: "Backend Development",
-      items: ["Node.js", "Express.js", "MongoDB", "SQL", "RESTful APIs"],
+      category: "Programming & Backend Dev",
+      icon: Icon,    // <-- for Iconify icons
+      items: [
+        { name: "Java", icon: "devicon-java-plain colored" },
+        { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+        { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+        { name: "Express.js", icon: "devicon-express-original colored" },
+        { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+        { name: "Mongoose", icon: "devicon-mongoose-original colored" },
+        { name: "My_SQL", icon: "devicon-mysql-plain colored" },
+        { name: "REST API", icon: "mdi:api" },               // ✅ API icon
+        { name: "Cloudinary", icon: "simple-icons:cloudinary" },    // ✅ Cloudinary logo
+      ],
       icon: CommandLineIcon,
     },
     {
-      category: "Tools & Version Control",
+      category: "Tools, Cloud & Deployment",
       items: [
-        "Git",
-        "GitHub",
-        "VS Code",
-        "Postman",
-        "Hoppscatch",
-        "npm",
-        "Webpack",
+        { name: "Git", icon: "devicon-git-plain colored" },
+        { name: "GitHub", icon: "devicon-github-original colored" },
+        { name: "VS Code", icon: "devicon-vscode-plain colored" },
+        { name: "Postman", icon: "devicon-postman-plain colored" },
+        { name: "Hoppscotch", icon: "devicon-hoppscotch-plain colored" },
+        { name: "npm", icon: "devicon-npm-original-wordmark colored" },
+        { name: "Webpack", icon: "devicon-webpack-plain colored" },
+        { name: "Netlify", icon: "devicon-netlify-plain colored" },
+        { name: "Vercel", icon: "devicon-vercel-original colored" },
+        { name: "Firebase", icon: "devicon-firebase-plain colored" },
       ],
       icon: CodeBracketIcon,
-    },
-    {
-      category: "Cloud & Deployment",
-      items: ["Netlify", "Vercel", "Firebase", "Hostinger"],
-      icon: CodeBracketIcon,
-    },
+    }
   ];
-
 
   const socialLinks = [
     {
@@ -397,44 +409,46 @@ const About = () => {
         </motion.div>
 
         {/* Skills Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8">
+        <div className="mb-12">
+          <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-10">
             Skills & Technologies
           </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {skills.map((skill, index) => (
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+            {skills.map((skillCategory, index) => (
               <motion.div
-                key={skill.category}
-                initial="hidden"
-                whileInView="visible"
+                key={skillCategory.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.15, duration: 0.5 }}
                 viewport={{ once: true }}
-                variants={{
-                  hidden: { opacity: 0, x: -20 },
-                  visible: {
-                    opacity: 1,
-                    x: 0,
-                    transition: {
-                      delay: index * 0.2,
-                      duration: 0.5,
-                    },
-                  },
-                }}
-                className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-lg"
+                className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-md rounded-xl p-4 shadow-md border border-gray-100 dark:border-gray-700"
               >
+                {/* Category Title */}
                 <div className="flex items-center mb-4">
-                  <skill.icon className="h-6 w-6 text-blue-600 dark:text-blue-400 mr-2" />
-                  <h4 className="text-xl font-semibold text-gray-900 dark:text-white">
-                    {skill.category}
+                  <skillCategory.icon className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white tracking-wide">
+                    {skillCategory.category}
                   </h4>
                 </div>
-                <div className="flex flex-wrap gap-2">
-                  {skill.items.map((item) => (
-                    <span
-                      key={item}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-600 text-gray-700 dark:text-gray-300 rounded-full text-sm"
+
+                {/* Skills Grid */}
+                <div className="grid grid-cols-4 sm:grid-cols-5 gap-4">
+                  {skillCategory.items.map((item) => (
+                    <motion.div
+                      key={item.name}
+                      whileHover={{ scale: 1.1, y: -4 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="flex flex-col items-center p-2 rounded-lg bg-gradient-to-tr from-gray-50/80 to-gray-100/40 dark:from-gray-700/40 dark:to-gray-800/40 shadow-sm hover:shadow-lg transition"
                     >
-                      {item}
-                    </span>
+                      {/* Check if it's devicon (string starts with devicon-) or iconify */}
+                      {item.icon.startsWith("devicon-") ?
+                        (< i className={`${item.icon} text-3xl`} />) : (<Icon icon={item.icon} className="text-3xl" />)
+                      }
+                      <span className="text-[10px] text-gray-700 dark:text-gray-300 mt-1 text-center">
+                        {item.name}
+                      </span>
+                    </motion.div>
                   ))}
                 </div>
               </motion.div>
@@ -444,11 +458,12 @@ const About = () => {
 
 
 
+
         {/* Hackathons & Highlights Section */}
         <div className="hidden md:block ">
-           <Achievements achievements={achievements} />
+          <Achievements achievements={achievements} />
         </div>
-       
+
 
 
 
