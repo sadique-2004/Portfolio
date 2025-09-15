@@ -142,7 +142,7 @@ const AnimatedText = ({ text, className }) => {
 };
 
 const About = () => {
-  const [showFullContent, setShowFullContent] = React.useState(false);
+  const [showMore, setShowMore] = React.useState(false);
 
   const naviagte = useNavigate();
   const handleNavigate = () => {
@@ -177,8 +177,8 @@ const About = () => {
         { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
         { name: "Mongoose", icon: "devicon-mongoose-original colored" },
         { name: "My_SQL", icon: "devicon-mysql-plain colored" },
-        { name: "REST API", icon: "mdi:api" },               // ✅ API icon
-        { name: "Cloudinary", icon: "simple-icons:cloudinary" },    // ✅ Cloudinary logo
+        { name: "REST API", icon: "mdi:api" },               // API icon
+        { name: "Cloudinary", icon: "simple-icons:cloudinary" },    // Cloudinary logo
       ],
       icon: CommandLineIcon,
     },
@@ -191,10 +191,10 @@ const About = () => {
         { name: "Postman", icon: "devicon-postman-plain colored" },
         { name: "Hoppscotch", icon: "devicon-hoppscotch-plain colored" },
         { name: "npm", icon: "devicon-npm-original-wordmark colored" },
-        { name: "Webpack", icon: "devicon-webpack-plain colored" },
+        // { name: "Webpack", icon: "devicon-webpack-plain colored" },
         { name: "Netlify", icon: "devicon-netlify-plain colored" },
         { name: "Vercel", icon: "devicon-vercel-original colored" },
-        { name: "Firebase", icon: "devicon-firebase-plain colored" },
+        // { name: "Firebase", icon: "devicon-firebase-plain colored" },
       ],
       icon: CodeBracketIcon,
     }
@@ -238,7 +238,8 @@ const About = () => {
 
 
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto mb-6 leading-relaxed">
-            A passionate Full Stack Developer creating elegant solutions and meaningful web experiences.
+            {/* A passionate Full Stack Developer creating elegant solutions and meaningful web experiences. */}
+            An AI-Augmented Full Stack Developer crafting elegant solutions and impactful web experiences
           </p>
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 mt-8">
             <motion.img
@@ -321,91 +322,83 @@ const About = () => {
             </a>
           </div>
 
+
           <div className="mt-12 px-4 sm:px-6 lg:px-8 max-w-[90rem] mx-auto">
             <motion.h3
-              className="text-2xl font-bold text-gray-900 dark:text-white mb-4"
-              initial={{ opacity: 0.4 }}
-              whileInView={{ opacity: 1 }}
+              className="text-2xl sm:text-4xl font-extrabold text-gray-900 dark:text-white mb-6 text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              viewport={{
-                once: true,
-                margin: "-20px",
-                amount: 0.1,
-              }}
+              viewport={{ once: true }}
             >
-              👋 Hello, I'm Md Sadique
+              👋 Hi, I’m <span className="bg-gradient-to-r from-primary-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent">Md Sadique</span>
             </motion.h3>
 
-            <div className="mt-12 max-w-4xl mx-auto">
+            <div className="mt-10 max-w-4xl mx-auto space-y-8">
               <AnimatedText
-                text="I specialize in building modern web applications using cutting-edge technologies. As a passionate full-stack developer with expertise in the <b>MERN stack</b>, I have a strong foundation in frontend and backend development, ensuring seamless user experiences and solving real-world problems."
-                className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
-
+                text="A <b>CSE’26 Undergrad</b> & <b> AI-Augmented Full-Stack Developer </b> 
+                on a mission to break into the <b>Top 1% of Software Engineers</b>. 
+                I specialize in building <b>modern, scalable web applications</b> using the <b>MERN stack</b> — crafting seamless experiences from frontend to backend."
+                className="text-gray-700 dark:text-gray-300 leading-relaxed"
               />
-            </div>
 
-            {/* Mobile view content with read more */}
-            <div className="md:hidden">
-              {!showFullContent ? (
-                <div>
-                  <button
-                    onClick={() => setShowFullContent(true)}
-                    className="text-blue-600 dark:text-blue-400 font-medium mt-2 focus:outline-none hover:underline"
-                  >
-                    Read More
-                  </button>
-                </div>
-              ) : (
+              
+
+              {showMore && (
                 <>
                   <AnimatedText
-                    text="I’ve independently launched impactful product <b>HackChain Network</b>, building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
-                    className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6"
-                    style={{ textAlign: "justify" }}
+                    text="I’ve independently launched impactful projects like <b>HackChain Network</b>, taking them from <b>idea → design → deployment</b>. Along the way, I’ve organized <b>tech events</b> (170+ participants), served as <b>Core Technical Coordinator</b> at hackathons, and contributed to <b>open source</b> through <b>GirlScript Summer of Code</b> & <b>Hacktoberfest</b>."
+                    className="text-gray-700 dark:text-gray-300 leading-relaxed"
                   />
 
                   <AnimatedText
-                    text="When I'm not coding, you'll find me In tech-events,  exploring new technologies or sharing my knowledge with the developer community."
-                    className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
-                    style={{ textAlign: "justify" }}
+                    text="Beyond coding, I thrive in <b>hackathons</b>, <b>open-source</b>, and <b>tech communities</b> — constantly pushing myself to learn, teach, and inspire. Currently, I’m scaling <b>HackChain Network</b> to deliver <b>AI-powered real-world solutions</b>."
+                    className="text-gray-700 dark:text-gray-300 leading-relaxed"
                   />
 
                   <AnimatedText
-                    text="Let's connect and create amazing things together! 🤝✨"
-                    className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
-                    style={{ textAlign: "justify" }}
+                    text="When I’m not coding, you’ll find me at <b>tech events</b>, <b>exploring new technologies</b>, or <b>sharing knowledge</b> with the developer community. My mantra: <b>Build. Break. Learn. Repeat.</b>"
+                    className="text-gray-600 dark:text-gray-300 leading-relaxed"
                   />
 
-                  <button
-                    onClick={() => setShowFullContent(false)}
-                    className="text-blue-600 dark:text-blue-400 font-medium mt-2 focus:outline-none hover:underline"
-                  >
-                    Read Less
-                  </button>
+                  <AnimatedText
+                    text="🤝 Let’s connect & create amazing things together!"
+                    className="text-gray-600 dark:text-gray-300 font-semibold text-lg"
+                  />
                 </>
               )}
-            </div>
 
-            {/* Desktop view - full content always visible */}
-            <div className="hidden md:block">
-              <AnimatedText
-                text="I’ve independently launched impactful product like <b>HackChain Network</b> building everything from scratch — from design to deployment. I'm actively involved in the tech community — organizing events like the <b>Blockchain & Anryton Workshop</b> with HackTour IND (170+ participants) and volunteering as a <b>Core Technical Coordinator at Nexus Hackathon</b>. I regularly participate in hackathons and contribute to open source, including <b>GirlScript Summer of Code 2024</b> and <b>Hacktoberfest 2024</b>. Currently, I’m focused on scaling my products — <b>HackChain Network</b> and <b>LearnMate</b> — to deliver real-world impact through AI-powered solutions."
-                className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
-                style={{ textAlign: "justify" }}
-              />
+              {/* toggle button */}
+              {/* Toggle Button */}
+              <div className="text-center mt-4">
+                <button
+                  onClick={() => setShowMore(!showMore)}
+                  className="text-primary-500 hover:text-primary-600 font-semibold"
+                >
+                  {showMore ? "Read Less ▲" : "Read More ▼"}
+                </button>
+              </div>
 
-              <AnimatedText
-                text="When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge with the developer community."
-                className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
-                style={{ textAlign: "justify" }}
-              />
 
-              <AnimatedText
-                text="Let's connect and create amazing things together! 🤝✨"
-                className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed justify justify-text"
-                style={{ textAlign: "justify" }}
-              />
+              {/* LeetCode Stats Card */}
+              <motion.div
+                className="flex justify-center pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <a href="https://leetcode.com/sadique_Dev/" target="_blank" rel="noopener noreferrer">
+                  <img 
+                    src="https://leetcard.jacoblin.cool/sadique_Dev?theme=dark&font=Syne&ext=heatmap" 
+                    alt="LeetCode Stats"
+                    className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 border border-gray-200 dark:border-gray-700"
+                  />
+                </a>
+              </motion.div>
             </div>
           </div>
+
         </motion.div>
 
         {/* Skills Section */}

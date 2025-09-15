@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Typed from "typed.js";
 import hey from "../assets/images/hey.gif";
+import banner from "../assets/images/banner.png";
 
 import "./Hero.css";
 
@@ -11,13 +12,16 @@ const Hero = () => {
   useEffect(() => {
     const typed = new Typed(typedElement.current, {
       strings: [
-        "CSE'26 Undergrad.",
-        "Full-Stack Developer.",
-        "Founder of HackChain.",
-        "Web Dev Mentor (Soon).",
-        "Future SDE.",
-        "Software Engineer.",
+        "CSE’26 Undergrad | Future Top 1% Engineer <span style='color:initial'>🚀</span>",
+        "Full-Stack Developer (MERN & Beyond) <span style='color:initial'>💻</span>",
+        "AI-Augmented Builder <span style='color:initial'>🤖</span>",
+        "Founder of HackChain <span style='color:initial'>⚡</span>",
+        "Open-Source Contributor <span style='color:initial'>🌍</span>",
+        "Crafting Scalable & Impactful Software <span style='color:initial'>🔥</span>",
+        "Future SDE | Dreaming Big, Building Bigger <span style='color:initial'>✨</span>",
+        "Always Leveling Up <span style='color:initial'>⬆️</span>",
       ],
+
       typeSpeed: 90,
       backSpeed: 50,
       loop: true,
@@ -83,16 +87,21 @@ const Hero = () => {
               </span>
             </h1>
 
-            <h2 className="text-xl sm:text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-center">
+            <h2
+              className="text-xl sm:text-2xl lg:text-4xl font-semibold text-gray-700 dark:text-gray-300 mb-4 sm:mb-6 text-center
+             min-h-[3rem] sm:min-h-[4rem] lg:min-h-[5rem]"
+            >
               <span
                 ref={typedElement}
                 className="bg-gradient-to-r from-primary-500 via-cyan-400 to-purple-500 bg-clip-text text-transparent"
               ></span>
             </h2>
 
+
             <p className="text-base sm:text-lg lg:text-xl text-dark-600 dark:text-dark-300 mb-6 sm:mb-8 max-w-2xl mx-auto text-center">
-              A passionate Full Stack Developer crafting innovative web
-              solutions and bringing ideas to life through code.
+              {/* A passionate Full Stack Developer crafting innovative web
+              solutions and bringing ideas to life through code. */}
+              Full Stack Developer leveraging AI to craft innovative, scalable web solutions — turning ideas into real-world impact.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center">
@@ -118,14 +127,34 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
+            {/* <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-black">
               <img
-                src="https://images.unsplash.com/photo-1618477388954-7852f32655ec?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3"
+                src={banner}
                 alt="Profile"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div>
+            </div> */}
+            <img
+              src={banner}
+              alt="Profile"
+              className="w-full h-full object-contain sm:object-cover rounded-lg"
+            />
+
+
+
+            {/* <div className="relative  h-[400px]  rounded-lg overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/rC8BYN1pkW4?autoplay=1&mute=1&loop=1&playlist=rC8BYN1pkW4&controls=0&modestbranding=1&showinfo=0"
+                title="Intro Video"
+                frameBorder="0"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                className="w-full h-full object-cover"
+              ></iframe>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            </div> */}
+
 
             <motion.div
               animate={{ y: [0, -10, 0] }}

@@ -242,6 +242,18 @@ const Contact = () => {
                 helperText={errors.name || ""}
                 fullWidth
                 size="small"
+
+                InputProps={{
+                  style: {
+                    color: "white",            // text color
+                  },
+                  classes: {
+                    notchedOutline: "border-white", // border color in dark mode
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "white" },   // label color
+                }}
               />
               <TextField
                 name="email"
@@ -253,6 +265,18 @@ const Contact = () => {
                 helperText={errors.email || ""}
                 fullWidth
                 size="small"
+
+                InputProps={{
+                  style: {
+                    color: "white",            // text color
+                  },
+                  classes: {
+                    notchedOutline: "border-white", // border color in dark mode
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "white" },   // label color
+                }}
               />
               <TextField
                 name="subject"
@@ -264,6 +288,18 @@ const Contact = () => {
                 helperText={errors.subject || ""}
                 fullWidth
                 size="small"
+
+                InputProps={{
+                  style: {
+                    color: "white",            // text color
+                  },
+                  classes: {
+                    notchedOutline: "border-white", // border color in dark mode
+                  },
+                }}
+                InputLabelProps={{
+                  style: { color: "white" },   // label color
+                }}
               />
               <TextField
                 name="message"
@@ -276,6 +312,9 @@ const Contact = () => {
                 fullWidth
                 multiline
                 rows={4}
+
+                className="dark:[&_.MuiOutlinedInput-root]:text-white 
+                          dark:[&_.MuiInputLabel-root]:text-gray-200"
               />
 
               <button
@@ -291,7 +330,7 @@ const Contact = () => {
                   "On the Way..."
                 ) : (
                   <>
-                    "Let’s Talk" <FaRegHandshake className="size-6" />
+                    Let’s Talk <FaRegHandshake className="size-6" />
                   </>
                 )}
               </button>
