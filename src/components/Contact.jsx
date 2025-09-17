@@ -243,17 +243,8 @@ const Contact = () => {
                 fullWidth
                 size="small"
 
-                InputProps={{
-                  style: {
-                    color: "white",            // text color
-                  },
-                  classes: {
-                    notchedOutline: "border-white", // border color in dark mode
-                  },
-                }}
-                InputLabelProps={{
-                  style: { color: "white" },   // label color
-                }}
+                className="dark:[&_.MuiOutlinedInput-root]:text-white 
+                          dark:[&_.MuiInputLabel-root]:text-gray-200"
               />
               <TextField
                 name="email"
@@ -266,17 +257,8 @@ const Contact = () => {
                 fullWidth
                 size="small"
 
-                InputProps={{
-                  style: {
-                    color: "white",            // text color
-                  },
-                  classes: {
-                    notchedOutline: "border-white", // border color in dark mode
-                  },
-                }}
-                InputLabelProps={{
-                  style: { color: "white" },   // label color
-                }}
+                className="dark:[&_.MuiOutlinedInput-root]:text-white 
+                          dark:[&_.MuiInputLabel-root]:text-gray-200"
               />
               <TextField
                 name="subject"
@@ -289,17 +271,10 @@ const Contact = () => {
                 fullWidth
                 size="small"
 
-                InputProps={{
-                  style: {
-                    color: "white",            // text color
-                  },
-                  classes: {
-                    notchedOutline: "border-white", // border color in dark mode
-                  },
-                }}
-                InputLabelProps={{
-                  style: { color: "white" },   // label color
-                }}
+              className="dark:[&_.MuiOutlinedInput-root]:text-white 
+                          dark:[&_.MuiInputLabel-root]:text-gray-200"
+
+              
               />
               <TextField
                 name="message"

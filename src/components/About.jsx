@@ -342,7 +342,7 @@ const About = () => {
                 className="text-gray-700 dark:text-gray-300 leading-relaxed"
               />
 
-              
+
 
               {showMore && (
                 <>
@@ -380,6 +380,18 @@ const About = () => {
               </div>
 
 
+              <motion.p
+                className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center italic"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                viewport={{ once: true }}
+              >
+                🚀 Currently following <span className="font-semibold text-yellow-500">Striver’s A2Z DSA Sheet</span>.
+                It’s not about the number of problems solved, but about mastering
+                <span className="font-semibold text-blue-500"> patterns & concepts</span> that matter in real interviews.
+              </motion.p>
+
               {/* LeetCode Stats Card */}
               <motion.div
                 className="flex justify-center pt-4"
@@ -389,8 +401,8 @@ const About = () => {
                 viewport={{ once: true }}
               >
                 <a href="https://leetcode.com/sadique_Dev/" target="_blank" rel="noopener noreferrer">
-                  <img 
-                    src="https://leetcard.jacoblin.cool/sadique_Dev?theme=dark&font=Syne&ext=heatmap" 
+                  <img
+                    src="https://leetcard.jacoblin.cool/sadique_Dev?theme=dark&font=Syne&ext=heatmap"
                     alt="LeetCode Stats"
                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 border border-gray-200 dark:border-gray-700"
                   />
