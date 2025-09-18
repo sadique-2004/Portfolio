@@ -46,6 +46,21 @@ People already told me they **love my portfolio ❤️** (and honestly, that’s
 
 ---
 
+## 🤝 Contribute / Support
+
+If you find this portfolio inspiring and want to use it → clone it.
+If you really like it → don’t forget to give a ⭐ on the repo.
+
+That’s the best way to support my work 💙
+
+## 👨‍💻 Made With
+
+💡 Crazy ideas, ☕ sleepless nights, 🤖 some AI help, and 💖 pure passion.
+
+## Made with ❤️ by Mohammad Sadique
+
+---
+
 ## 📂 Clone & Run Locally  
 
 ```bash
@@ -64,17 +79,4 @@ npm start
 
 Now open http://localhost:3000 and boom 💥 portfolio running on your machine.
 
---
-
-🤝 Contribute / Support
-
-If you find this portfolio inspiring and want to use it → clone it.
-If you really like it → don’t forget to give a ⭐ on the repo.
-
-That’s the best way to support my work 💙
-
-👨‍💻 Made With
-
-💡 Crazy ideas, ☕ sleepless nights, 🤖 some AI help, and 💖 pure passion.
-
-Made with ❤️ by Mohammad Sadique
+---
