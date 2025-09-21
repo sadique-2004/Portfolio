@@ -73,16 +73,31 @@ import img68 from "../assets/memoriesImg/img68.jpg";
 import img69 from "../assets/memoriesImg/img69.jpg";
 import img70 from "../assets/memoriesImg/img70.jpg";
 import img71 from "../assets/memoriesImg/img71.jpg";
+// microsoft
+import img72 from "../assets/memoriesImg/img72.jpg";
+import img73 from "../assets/memoriesImg/img73.jpg";
+// import img74 from "../assets/memoriesImg/img74.jpg";
+import img75 from "../assets/memoriesImg/img75.jpg";
+import img76 from "../assets/memoriesImg/img76.jpg";
+import img77 from "../assets/memoriesImg/img77.jpg";
+
 
 // 2. GALLERY ARRAY
 const images = [
+
+  { src: img72, width: 4, height: 5 },
+  { src: img73, width: 5, height: 5 },
+  // { src: img74, width: 8, height: 4  },
+  { src: img75, width: 8, height: 6},
+  { src: img76, width: 8, height: 6 },
+  { src: img77, width: 6, height: 5 },
 
   { src: img62, width: 7, height: 4 },
   { src: img63, width: 5, height: 6 },
   { src: img64, width: 8, height: 4  },
   { src: img65, width: 5, height: 6},
   { src: img69, width: 5, height: 6 },
-  { src: img66, width: 7, height: 6 },
+  { src: img66, width: 4, height: 5 },
   { src: img67, width: 5, height: 6 },
   { src: img68, width: 5, height: 6 },
   
@@ -96,9 +111,9 @@ const images = [
 
   { src: img37, width: 4, height: 3 },
 
-  { src: img6, width: 6, height: 4 },
+  { src: img6, width: 7, height: 7 },
   { src: img7, width: 4, height: 4 },
-  { src: img8, width: 8, height: 4 },
+  { src: img8, width: 8, height: 6 },
   { src: img9, width: 4, height: 4 },
   { src: img4, width: 4, height: 4 },
   { src: img10, width: 4, height: 3 },

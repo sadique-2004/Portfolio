@@ -118,8 +118,8 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: EnvelopeIcon,
-      content: "mdsadique044234@gmail.com",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&to=mdsadique044234@gmail.com",
+      content: "md.sadique.dev@gmail.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=md.sadique.dev@gmail.com",
     },
   ];
 

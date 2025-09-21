@@ -7,6 +7,7 @@ import pwskillsCertificate from '../assets/images/PWSKILLS.jpg';
 import postmanCertificate from '../assets/images/postman.jpg';
 import girlscriptCertificate from '../assets/images/girlscript.jpg';
 import internshalaC from '../assets/images/internshalaC.jpg';
+import vs_cove_cert from '../assets/images/vs_cove_cert.jpg';
 
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
@@ -43,6 +44,16 @@ const Certifications = () => {
       url: 'YOUR_GIRLSCRIPT_CERTIFICATE_URL'
     },
     {
+      title: 'VS Code Dev Days - GitHub Copilot Workshop',
+      organization: 'TechNexus & Microsoft',
+      date: 'September 2025',
+      credentialId: 'VSCode-Copilot-2025',
+      description: 'Hands-on workshop at Microsoft Bangalore on leveraging GitHub Copilot and Model Context Protocol (MCP) for AI-powered development workflows.',
+      skills: ['GitHub Copilot', 'VS Code', 'Model Context Protocol (MCP)', 'Collaboration'],
+      image: vs_cove_cert,
+      url: 'https://technexus.dev/events/vscode-dev-days'
+    },    
+    {
       title: 'C & C++ Programming',
       organization: 'Internshala',
       date: 'December 2022',
@@ -52,17 +63,7 @@ const Certifications = () => {
       image: internshalaC,
       url: 'https://trainings.internshala.com/s/v/1404174/1ab73b47'
     },
-    {
-      "title": "Full Stack Web Development",
-      "organization": "Apna College (Shradha Khapra)",
-      "date": "October 2024",
-      "credentialId": "MDB-DEV-789012",
-      "description": "In-depth training in full-stack web development with expertise in frontend technologies (HTML, CSS, JavaScript, React) and backend development (Node.js, Express, MongoDB).",
-      "skills": [
-        "HTML", "CSS", "Tailwind CSS", "Bootstrap", "JavaScript", "ES6", "EJS", "MongoDB", "SQL", "Node.js", "Express.js", "React.js", "Git", "GitHub"
-      ],
-      "image": null
-    }
+
   ];
 
   const displayedCertifications = showAll ? certifications : certifications.slice(0, 3);
