@@ -380,7 +380,7 @@ const About = () => {
               </div>
 
 
-              <motion.p
+              {/* <motion.p
                 className="mt-3 text-sm text-gray-600 dark:text-gray-400 text-center italic"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -390,10 +390,10 @@ const About = () => {
                 🚀 Currently following <span className="font-semibold text-yellow-500">Striver’s A2Z DSA Sheet</span>.
                 It’s not about the number of problems solved, but about mastering
                 <span className="font-semibold text-blue-500"> patterns & concepts</span> that matter in real interviews.
-              </motion.p>
+              </motion.p> */}
 
               {/* LeetCode Stats Card */}
-              <motion.div
+              {/* <motion.div
                 className="flex justify-center pt-4"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -407,7 +407,7 @@ const About = () => {
                     className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 border border-gray-200 dark:border-gray-700"
                   />
                 </a>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
 
