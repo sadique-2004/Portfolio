@@ -81,9 +81,31 @@ import img75 from "../assets/memoriesImg/img75.jpg";
 import img76 from "../assets/memoriesImg/img76.jpg";
 import img77 from "../assets/memoriesImg/img77.jpg";
 
+import img78 from "../assets/memoriesImg/img78.jpg";
+import img79 from "../assets/memoriesImg/img79.jpg";
+import img80 from "../assets/memoriesImg/img80.jpg";
+import img81 from "../assets/memoriesImg/img81.jpg";
+import img82 from "../assets/memoriesImg/img82.jpg";
+import img83 from "../assets/memoriesImg/img83.jpg";
+import img84 from "../assets/memoriesImg/img84.jpg";
+import img85 from "../assets/memoriesImg/img85.jpg";
+import img86 from "../assets/memoriesImg/img86.jpg";
+
+
 
 // 2. GALLERY ARRAY
 const images = [
+
+  { src: img78, width: 4, height: 5 },
+  { src: img79, width: 8, height: 5 },
+  { src: img80, width: 4, height: 6  },
+  { src: img81, width: 12, height: 6},
+  { src: img82, width:  5, height: 6 },
+  { src: img83, width: 10, height: 6 },
+  { src: img84, width: 5, height: 6 },
+  { src: img85, width: 12, height: 6 },
+  { src: img86, width: 5, height: 6 },
+
 
   { src: img72, width: 4, height: 5 },
   { src: img73, width: 5, height: 5 },

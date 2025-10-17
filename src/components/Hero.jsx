@@ -13,14 +13,15 @@ const Hero = () => {
     const typed = new Typed(typedElement.current, {
       strings: [
         "Technical Trainer @ TAP Academy ",
-        "Full-Stack Developer (MERN & Beyond) <span style='color:initial'>💻</span>",
-        "CSE’26 Undergrad | Future Top 1% Engineer <span style='color:initial'>🚀</span>",
-        "AI-Augmented Builder <span style='color:initial'>🤖</span>",
-        "Founder of HackChain <span style='color:initial'>⚡</span>",
-        "Open-Source Contributor <span style='color:initial'>🌍</span>",
-        "Crafting Scalable & Impactful Software <span style='color:initial'>🔥</span>",
+        "Full-Stack Developer (MERN)",
+        // "CSE’26 Undergrad | Future Top 1% Engineer <span style='color:initial'>🚀</span>",
+        "SDE at TAP Academy",
+        "AI-Augmented Builder",
+        "Founder of HackChain",
+        "Open-Source Contributor",
+        "Crafting Scalable & Impactful Software",
         // "Future SDE | Dreaming Big, Building Bigger <span style='color:initial'>✨</span>",
-        // "Always Leveling Up <span style='color:initial'>⬆️</span>",
+        "Always Leveling Up <span style='color:initial'>⬆️</span>",
       ],
 
       typeSpeed: 90,
@@ -181,4 +182,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

@@ -6,7 +6,6 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 
-import learnMateImage from "../assets/images/larnmate.png";
 import hackChainImage from "../assets/images/hackchain.png";
 import trippyStayImage from "../assets/images/trippyStay.png";
 import InvoicifyImage from "../assets/images/invoicify.jpg";
