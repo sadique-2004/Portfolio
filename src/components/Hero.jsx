@@ -129,14 +129,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="relative"
           >
-            {/* <div className="relative w-full h-[400px] rounded-lg overflow-hidden bg-black">
-              <img
-                src={banner}
-                alt="Profile"
-                className="w-full h-full object-contain"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-            </div> */}
+          
             <img
               src={banner}
               alt="Profile"

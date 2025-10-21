@@ -30,7 +30,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950">
+    <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-950 overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -58,7 +58,7 @@ const Education = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="mb-12 ml-6 relative"
+              className="mb-12 pl-6 relative"
             >
               {/* Timeline dot */}
               <span className={`absolute -left-4 top-4 w-8 h-8 ${edu.status === "Completed" ? "bg-green-500" : "bg-yellow-500"} rounded-full border-4 border-white dark:border-gray-900 shadow-md`}></span>
@@ -75,14 +75,14 @@ const Education = () => {
                     </p>
                   </div>
                   <div className="mt-2 md:mt-0 text-left md:text-right">
-                    <span className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full px-4 py-1 text-sm font-semibold shadow-md">
+                    <span className="inline-block bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-full px-2 md:px-4 py-1 text-sm font-semibold shadow-md">
                       {edu.duration}
                     </span>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1 md:mt-0">
                       {edu.location}
                     </p>
                     <span
-                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mt-2 ${edu.status === "Completed"
+                      className={`inline-block px-3 py-1 rounded-full text-sm font-semibold mt-2 md:mt-0 ${edu.status === "Completed"
                           ? "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
                           : "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200"
                         }`}
