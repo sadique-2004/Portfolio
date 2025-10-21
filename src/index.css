@@ -13,6 +13,16 @@ html {
   scroll-behavior: smooth;
 }
 
+/* AI Tools Continuous Scroller */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  display: flex;
+  animation: scroll 10s linear infinite;
+}
+
 
 
 @layer base {

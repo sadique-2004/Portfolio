@@ -5,6 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
+import boltIcon from "../assets/icons/bolt ai logo.png"
+import lovableIcon from "../assets/icons/lovable-logo-icon.svg"
+import claudeIcon from "../assets/icons/claude-color.svg"
+import cursorIcon from "../assets/icons/cursor.svg"
+import chatGptIcon from "../assets/icons/ChatGPT-Logo.svg"
+import perplexityIcon from "../assets/icons/perplexity-ai-seeklogo.svg"
+
 
 import {
   faGithub,
@@ -19,16 +26,15 @@ import {
 import profileImage from "../assets/images/profileImg.jpg";
 import Achievements from "./Achievements";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.6,
-    },
-  },
-};
+const aiTools = [
+  chatGptIcon,
+  claudeIcon,
+  lovableIcon,
+  boltIcon,
+  cursorIcon,
+  perplexityIcon,
+];
+
 
 const achievements = [
   {
@@ -143,6 +149,7 @@ const AnimatedText = ({ text, className }) => {
 
 const About = () => {
   const [showMore, setShowMore] = React.useState(false);
+   const [isOpen, setIsOpen] = React.useState(false); 
 
   const naviagte = useNavigate();
   const handleNavigate = () => {
@@ -167,7 +174,7 @@ const About = () => {
       icon: CodeBracketIcon,
     },
     {
-      category: "Programming & Backend Dev",
+      category: "Programming & Backend",
       icon: Icon,    // <-- for Iconify icons
       items: [
         { name: "Java", icon: "devicon-java-plain colored" },
@@ -197,7 +204,8 @@ const About = () => {
         // { name: "Firebase", icon: "devicon-firebase-plain colored" },
       ],
       icon: CodeBracketIcon,
-    }
+    },
+
   ];
 
   const socialLinks = [
@@ -368,7 +376,6 @@ const About = () => {
                 </>
               )}
 
-              {/* toggle button */}
               {/* Toggle Button */}
               <div className="text-center mt-4">
                 <button
@@ -413,54 +420,101 @@ const About = () => {
 
         </motion.div>
 
-        {/* Skills Section */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-10">
-            Skills & Technologies
-          </h3>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-            {skills.map((skillCategory, index) => (
+     {/* Skills Section */}
+<div className="mb-12">
+  <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+    Skills & Technologies
+  </h3>
+
+  {/* Toggle Button */}
+  <div className="flex justify-center mb-6">
+    <button
+      className="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+      onClick={() => setIsOpen(!isOpen)}
+    >
+      {isOpen ? "Hide Skills" : "Show Skills"}
+    </button>
+  </div>
+
+  {/* Category Headings */}
+  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+    {skills.map((skillCategory, index) => (
+      <motion.div
+        key={skillCategory.category}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ delay: index * 0.1, duration: 0.5 }}
+        viewport={{ once: true }}
+        className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-md rounded-xl p-4 shadow-md border border-gray-100 dark:border-gray-700"
+      >
+        {/* Category Heading */}
+        <div className="flex items-center mb-2">
+          <skillCategory.icon className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
+          <h4 className="text-lg font-semibold text-gray-900 dark:text-white tracking-wide">
+            {skillCategory.category}
+          </h4>
+        </div>
+
+        {/* Skills Grid: only show if isOpen */}
+        {isOpen && (
+          <div className="grid grid-cols-4 sm:grid-cols-5 gap-4 mt-2">
+            {skillCategory.items.map((item) => (
               <motion.div
-                key={skillCategory.category}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15, duration: 0.5 }}
-                viewport={{ once: true }}
-                className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-md rounded-xl p-4 shadow-md border border-gray-100 dark:border-gray-700"
+                key={item.name}
+                whileHover={{ scale: 1.1, y: -4 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex flex-col items-center p-2 rounded-lg bg-gradient-to-tr from-gray-50/80 to-gray-100/40 dark:from-gray-700/40 dark:to-gray-800/40 shadow-sm hover:shadow-lg transition"
               >
-                {/* Category Title */}
-                <div className="flex items-center mb-4">
-                  <skillCategory.icon className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white tracking-wide">
-                    {skillCategory.category}
-                  </h4>
-                </div>
+                {typeof item.icon === "string" ? (
+                  item.icon.startsWith("devicon-") ? (
+                    <i className={`${item.icon} text-3xl`} />
+                  ) : (
+                    <Icon icon={item.icon} className="text-3xl" />
+                  )
+                ) : (
+                  <img
+                    src={item.icon}
+                    alt={item.name}
+                    className="w-8 h-8 object-contain"
+                  />
+                )}
 
-                {/* Skills Grid */}
-                <div className="grid grid-cols-4 sm:grid-cols-5 gap-4">
-                  {skillCategory.items.map((item) => (
-                    <motion.div
-                      key={item.name}
-                      whileHover={{ scale: 1.1, y: -4 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="flex flex-col items-center p-2 rounded-lg bg-gradient-to-tr from-gray-50/80 to-gray-100/40 dark:from-gray-700/40 dark:to-gray-800/40 shadow-sm hover:shadow-lg transition"
-                    >
-                      {/* Check if it's devicon (string starts with devicon-) or iconify */}
-                      {item.icon.startsWith("devicon-") ?
-                        (< i className={`${item.icon} text-3xl`} />) : (<Icon icon={item.icon} className="text-3xl" />)
-                      }
-                      <span className="text-[10px] text-gray-700 dark:text-gray-300 mt-1 text-center">
-                        {item.name}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
+                <span className="text-[10px] text-gray-700 dark:text-gray-300 mt-1 text-center">
+                  {item.name}
+                </span>
               </motion.div>
             ))}
           </div>
-        </div>
+        )}
+      </motion.div>
+    ))}
+  </div>
+</div>
 
+
+        <div className="mt-16 relative overflow-hidden">
+          <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+            AI Tools I Use
+          </h3>
+
+          <div className="relative mx-auto w-[95%] sm:w-[70%] md:w-[50%] lg:w-[40%] overflow-hidden">
+            <div className="flex justify-center items-center space-x-10 animate-scroll">
+              {aiTools.concat(aiTools).map((icon, index) => (
+                <img
+                  key={index}
+                  src={icon}
+                  alt={`AI Tool ${index}`}
+                  className="w-10 h-10 object-contain opacity-90 hover:opacity-100 transition-transform duration-300 hover:scale-110"
+                />
+              ))}
+            </div>
+
+            {/* Gradient fade edges for smooth transition */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-gray-100 dark:from-gray-900 to-transparent" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-gray-100 dark:from-gray-900 to-transparent" />
+          </div>
+        </div>
 
 
 
