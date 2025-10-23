@@ -9,7 +9,7 @@ import {
 import hackChainImage from "../assets/images/hackchain.png";
 import trippyStayImage from "../assets/images/trippyStay.png";
 import InvoicifyImage from "../assets/images/invoicify.jpg";
-// import inDevImage from '../assets/images/inDev.jpg'
+import learnMateImage from "../assets/images/learnMate.png";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -68,30 +68,30 @@ const Projects = () => {
       status: "InDev",
       type: "Community",
     },
-    // {
-    //   title: "LearnMate",
-    //   description:
-    //     "An AI-powered learning platform where students can ask doubts via AI, explore curated resources, post questions in a peer community, and receive personalized support — all in one unified experience.",
-    //   image: learnMateImage,
-    //   technologies: [
-    //     "React",
-    //     "Node.js",
-    //     "Express",
-    //     "VectorDB",
-    //     "Gemini API",
-    //     "RAG",
-    //     "OpenAI",
-    //     "TypeScript",
-    //     "Tailwind",
-    //     "Shadcn UI",
-    //     "Clerk",
-    //     "Cloudinary",
-    //   ],
-    //   liveLink: "https://lern-mate.vercel.app/",
-    //   codeLink: "https://github.com/sadique-2004/LernMate",
-    //   status: "In Development",
-    //   type: "Learning",
-    // },
+    {
+      title: "LearnMate",
+      description:
+        "An AI-powered learning platform where students can ask doubts via AI, explore curated resources, post questions in a peer community, and receive personalized support — all in one unified experience.",
+      image: learnMateImage,
+      technologies: [
+        "React",
+        "Node.js",
+        "Express",
+        // "VectorDB",
+        "Gemini API",
+        // "RAG",
+        "OpenAI",
+        "TypeScript",
+        "Tailwind",
+        "Shadcn UI",
+        "Clerk",
+        "Cloudinary",
+      ],
+      liveLink: "https://lern-mate.vercel.app/",
+      codeLink: "https://github.com/sadique-2004/LernMate",
+      status: "In Dev",
+      type: "Learning",
+    },
     {
       title: "TrippyStay",
       description:
@@ -299,6 +299,7 @@ const Projects = () => {
                       </option>
                     ))}
                   </select>
+                  
                 </div>
 
                 {/* Status Filter */}
@@ -529,7 +530,7 @@ const Projects = () => {
             >
               {showAll
                 ? "Show Less"
-                : `Show All (${filteredProjects.length - 3} more)`}
+                : `Show ${filteredProjects.length - 3} more project`}
             </button>
           </motion.div>
         )}

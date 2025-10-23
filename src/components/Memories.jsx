@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { Gallery } from "react-grid-gallery";
+// import { PlayCircle } from "lucide-react"; 
 
 // 1. IMPORTS
 import img1 from '../assets/memoriesImg/img1.jpg';
@@ -194,9 +195,60 @@ const images = [
 
 
 
+// const Memories = () => {
+//   return (
+//     <section className="py-20 bg-gray-50 dark:bg-gray-800">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <motion.div
+//           className="text-center mb-16 px-4 sm:px-6 lg:px-0"
+//           initial={{ opacity: 0 }}
+//           animate={{ opacity: 1 }}
+//           transition={{ duration: 0.7 }}
+//         >
+//           <motion.h2
+//             className="text-4xl sm:text-5xl md:text-6xl font-extrabold  mb-6"
+//             initial={{ opacity: 0, y: -30 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.6 }}
+//           >
+//             📸 <span className="bg-gradient-to-r from-blue-600 to-cyan-400 bg-clip-text text-transparent">My Memories</span>
+//           </motion.h2>
+
+//           <motion.p
+//             className="text-md sm:text-lg lg:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed tracking-wide"
+//             initial={{ opacity: 0, y: 10 }}
+//             animate={{ opacity: 1, y: 0 }}
+//             transition={{ delay: 0.3, duration: 0.6 }}
+//           >
+//             A glimpse into the <span className="font-semibold text-blue-600 dark:text-cyan-400">special moments</span> I've experienced — from attending and organizing tech events, participating in hackathons, to cherishing college life. Each photo reflects a <span className="font-semibold text-purple-500">unique memory</span> that has shaped my journey.
+//           </motion.p>
+//         </motion.div>
+
+
+//         <Gallery images={images} />
+//       </div>
+//     </section>
+//   );
+// };
+
+
+
 const Memories = () => {
+  const audioRef = useRef(null);
+
+  const handlePlay = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-800">
+    <section className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
+      {/* 🎵 Background Music */}
+      <audio ref={audioRef} src="/sounds/eventMusic.mp3" loop preload="auto" />
+      
+      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16 px-4 sm:px-6 lg:px-0"
@@ -205,7 +257,7 @@ const Memories = () => {
           transition={{ duration: 0.7 }}
         >
           <motion.h2
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold  mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6"
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -223,12 +275,20 @@ const Memories = () => {
           </motion.p>
         </motion.div>
 
+      <div className="flex justify-center mb-10">
+      <button
+        onClick={handlePlay}
+        className="bg-gradient-to-r from-blue-600 to-cyan-400 text-white px-5 py-2 rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+      >
+        Explore with music
+      </button>
+    </div>
 
+        {/* Your Gallery Component */}
         <Gallery images={images} />
       </div>
     </section>
   );
 };
-
 
 export default Memories;

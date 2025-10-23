@@ -18,16 +18,21 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const handleNavLink = (sectionId) => {
-    if( Location.pathname !== "/"){
+    if (Location.pathname !== "/") {
       navigate("/");
-    }else{
+    } else {
       const section = document.getElementById(sectionId);
-      if (section){
+      if (section) {
         section.scrollIntoView({ behavior: "smooth" });
       }
     }
-     // Close mobile menu if open
-     setIsMenuOpen(false);
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+  };
+
+  const playSound = () => {
+    const audio = new Audio('/sounds/switch.mp3'); // path to your sound file
+    audio.play();
   };
 
   useEffect(() => {
@@ -45,7 +50,7 @@ const Navbar = () => {
     { name: "Experience", href: "experience" },
     { name: "Education", href: "education" },
     { name: "Certifications", href: "certifications" },
-    { name: "Contact", href: "contact", special: true,},
+    { name: "Contact", href: "contact", special: true, },
   ];
 
   return (
@@ -79,17 +84,20 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   onClick={() => handleNavLink(item.href)}
-                  className={`px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer ${
-                    item.special
+                  className={`px-2 lg:px-3 py-2 text-sm lg:text-base cursor-pointer ${item.special
                       ? "text-white bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 shadow-lg hover:shadow-primary-500/25 rounded-full font-medium"
                       : "text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
-                  } transition-all duration-200 whitespace-nowrap`}
+                    } transition-all duration-200 whitespace-nowrap`}
                 >
                   {item.name}
                 </a>
               ))}
               <button
-                onClick={() => setIsDark(!isDark)}
+                onClick={() => {
+                  playSound()
+                  setIsDark(!isDark)
+                  
+                }}
                 className="p-2 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 ml-1"
               >
                 {isDark ? (
@@ -134,11 +142,10 @@ const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                className={`block px-3 py-2 cursor-pointer ${
-                  item.special
+                className={`block px-3 py-2 cursor-pointer ${item.special
                     ? "text-white bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 rounded-full font-medium "
                     : "text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
-                }`}
+                  }`}
                 onClick={() => {
                   handleNavLink(item.href);
                 }}
