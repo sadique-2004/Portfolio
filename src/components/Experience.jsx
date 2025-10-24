@@ -22,10 +22,11 @@ const Experience = () => {
       duration: "Sep 2025 - Present",
       location: "On-site",
       description: [
-        "Joined TAP Academy as a Technical Trainer, mentoring students in Computer Science fundamentals and software development.",
-        "Contributing as a Full-Stack Developer to build, enhance, and maintain scalable applications using MERN stack and modern tools.",
-        "Focused on empowering learners with practical coding knowledge, industry-relevant projects, and hands-on development experience.",
+        "Mentoring students in frontend technologies — HTML5, CSS3, ES6, React, and Tailwind CSS.",
+        "Guiding them to create professional portfolios, LinkedIn profiles, and real-world projects.",
       ],
+
+
     },
     {
       company: "HackChain Network",
@@ -34,7 +35,8 @@ const Experience = () => {
       duration: "March 2025 – Present",
       location: "India",
       description: [
-        "Founded HackChain Network — a developer-first tech community built to inspire, educate, and empower developers through events, resources, and collaboration.",
+        "Founded HackChain Network — a community for developers to learn and grow together.",
+        "Building connections through events, resources, and collaboration.",
       ],
     },
     {
@@ -44,11 +46,11 @@ const Experience = () => {
       duration: "Oct 2024 - Nov 2024 · 2 mos",
       location: "Remote",
       description: [
-        "Delivered high-quality code to real-world open-source projects, collaborating globally with developers.",
-        "Built and optimized responsive interfaces using HTML, CSS, JS, Bootstrap, and Tailwind CSS.",
-        "Enhanced skills in Git, API development, and testing while improving project functionality.",
-        "Achieved a top rank (424/60,000) in GirlScript Summer of Code and earned 4 badges in Hacktoberfest.",
+        "Collaborated on global open-source projects using modern frontend tools.",
+        "Crafted responsive UIs and improved project performance.",
+        "Recognized with top GSSoC rank and Hacktoberfest achievements.",
       ],
+
     },
   ];
 
