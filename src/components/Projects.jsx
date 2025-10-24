@@ -524,9 +524,7 @@ const Projects = () => {
             <button
               onClick={() => setShowAll(!showAll)}
               className="inline-flex items-center px-8 py-3 text-lg font-medium
-                       bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-lg
-                       hover:from-blue-700 hover:to-blue-600 transform hover:scale-105
-                       transition-all duration-300 shadow-lg"
+                       bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
             >
               {showAll
                 ? "Show Less"

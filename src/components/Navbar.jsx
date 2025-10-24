@@ -112,7 +112,10 @@ const Navbar = () => {
           {/* Mobile Navigation Button */}
           <div className="flex md:hidden items-center space-x-2">
             <button
-              onClick={() => setIsDark(!isDark)}
+              onClick={() => {
+                playSound()
+                setIsDark(!isDark)
+              }}
               className="p-2 text-dark-700 dark:text-dark-300 hover:text-primary-600 dark:hover:text-primary-400"
             >
               {isDark ? (

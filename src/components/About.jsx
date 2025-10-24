@@ -149,7 +149,7 @@ const AnimatedText = ({ text, className }) => {
 
 const About = () => {
   const [showMore, setShowMore] = React.useState(false);
-   const [isOpen, setIsOpen] = React.useState(false); 
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const naviagte = useNavigate();
   const handleNavigate = () => {
@@ -266,15 +266,15 @@ const About = () => {
                 <FontAwesomeIcon icon={faDownload} className="w-5 h-5 mr-2" />
                 Download Resume
               </a>
-
+              {/* 
               <a
                 href="https://www.linkedin.com/in/mdsadique5"
                 target="_blank"
                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300"
               >
                 Follow me on LinkedIn
-              </a>
-              <div className="flex flex-wrap gap-2 mt-4">
+              </a> */}
+              <div className="flex flex-wrap gap-2">
                 {socialLinks.map((link) => (
                   <a
                     key={link.name}
@@ -293,42 +293,44 @@ const About = () => {
                   </a>
                 ))}
               </div>
+
+              {/* Memories Section */}
+              <a
+                className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold 
+              rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none 
+              focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 cursor-pointer "
+
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View My Memories"
+                onClick={handleNavigate}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-6 mr-2"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+                  />
+                </svg>
+                View My Memories
+              </a>
+
             </div>
           </div>
 
-          <div className="flex justify-center mt-4">
-            <a
-              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold 
-              rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 focus:outline-none 
-              focus:ring-2 focus:ring-blue-400 focus:ring-opacity-50 cursor-pointer mt-3"
 
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View My Memories"
-              onClick={handleNavigate}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6 mr-2"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
-                />
-              </svg>
-              View My Memories
-            </a>
-          </div>
 
 
           <div className="mt-12 px-4 sm:px-6 lg:px-8 max-w-[90rem] mx-auto">
@@ -421,76 +423,76 @@ const About = () => {
         </motion.div>
 
 
-     {/* Skills Section */}
-<div className="mb-12">
-  <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
-    Skills & Technologies
-  </h3>
+        {/* Skills Section */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+            Skills & Technologies
+          </h3>
 
-  {/* Toggle Button */}
-  <div className="flex justify-center mb-6">
-    <button
-      className="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      {isOpen ? "Hide Skills" : "Show Skills"}
-    </button>
-  </div>
+          {/* Toggle Button */}
+          <div className="flex justify-center mb-6">
+            <button
+              className="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isOpen ? "Hide Skills" : "Show Skills"}
+            </button>
+          </div>
 
-  {/* Category Headings */}
-  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-    {skills.map((skillCategory, index) => (
-      <motion.div
-        key={skillCategory.category}
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ delay: index * 0.1, duration: 0.5 }}
-        viewport={{ once: true }}
-        className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-md rounded-xl p-4 shadow-md border border-gray-100 dark:border-gray-700"
-      >
-        {/* Category Heading */}
-        <div className="flex items-center mb-2">
-          <skillCategory.icon className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
-          <h4 className="text-lg font-semibold text-gray-900 dark:text-white tracking-wide">
-            {skillCategory.category}
-          </h4>
-        </div>
-
-        {/* Skills Grid: only show if isOpen */}
-        {isOpen && (
-          <div className="grid grid-cols-4 sm:grid-cols-5 gap-4 mt-2">
-            {skillCategory.items.map((item) => (
+          {/* Category Headings */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+            {skills.map((skillCategory, index) => (
               <motion.div
-                key={item.name}
-                whileHover={{ scale: 1.1, y: -4 }}
-                whileTap={{ scale: 0.95 }}
-                className="flex flex-col items-center p-2 rounded-lg bg-gradient-to-tr from-gray-50/80 to-gray-100/40 dark:from-gray-700/40 dark:to-gray-800/40 shadow-sm hover:shadow-lg transition"
+                key={skillCategory.category}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-md rounded-xl p-4 shadow-md border border-gray-100 dark:border-gray-700"
               >
-                {typeof item.icon === "string" ? (
-                  item.icon.startsWith("devicon-") ? (
-                    <i className={`${item.icon} text-3xl`} />
-                  ) : (
-                    <Icon icon={item.icon} className="text-3xl" />
-                  )
-                ) : (
-                  <img
-                    src={item.icon}
-                    alt={item.name}
-                    className="w-8 h-8 object-contain"
-                  />
-                )}
+                {/* Category Heading */}
+                <div className="flex items-center mb-2">
+                  <skillCategory.icon className="h-5 w-5 text-blue-600 dark:text-blue-400 mr-2" />
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white tracking-wide">
+                    {skillCategory.category}
+                  </h4>
+                </div>
 
-                <span className="text-[10px] text-gray-700 dark:text-gray-300 mt-1 text-center">
-                  {item.name}
-                </span>
+                {/* Skills Grid: only show if isOpen */}
+                {isOpen && (
+                  <div className="grid grid-cols-4 sm:grid-cols-5 gap-4 mt-2">
+                    {skillCategory.items.map((item) => (
+                      <motion.div
+                        key={item.name}
+                        whileHover={{ scale: 1.1, y: -4 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="flex flex-col items-center p-2 rounded-lg bg-gradient-to-tr from-gray-50/80 to-gray-100/40 dark:from-gray-700/40 dark:to-gray-800/40 shadow-sm hover:shadow-lg transition"
+                      >
+                        {typeof item.icon === "string" ? (
+                          item.icon.startsWith("devicon-") ? (
+                            <i className={`${item.icon} text-3xl`} />
+                          ) : (
+                            <Icon icon={item.icon} className="text-3xl" />
+                          )
+                        ) : (
+                          <img
+                            src={item.icon}
+                            alt={item.name}
+                            className="w-8 h-8 object-contain"
+                          />
+                        )}
+
+                        <span className="text-[10px] text-gray-700 dark:text-gray-300 mt-1 text-center">
+                          {item.name}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             ))}
           </div>
-        )}
-      </motion.div>
-    ))}
-  </div>
-</div>
+        </div>
 
 
         <div className="mt-16 relative overflow-hidden">
