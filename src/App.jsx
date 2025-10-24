@@ -12,7 +12,6 @@ import Contact from "./components/Contact";
 import Memories from "./components/Memories";
 import Footer from "./components/Footer";
 import LoadingScreen from "./components/Loadingscreen"; // Import the LoadingScreen component
-
 import "./App.css";
 
 function App() {
@@ -37,6 +36,7 @@ function App() {
             element={
               <>
                 <Hero />
+               
                 <About />
                 <Projects />
                 <Experience />

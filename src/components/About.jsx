@@ -425,14 +425,15 @@ const About = () => {
 
         {/* Skills Section */}
         <div className="mb-12">
-          <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+          <h3 className="text-2xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-600 mb-6">
             Skills & Technologies
           </h3>
 
           {/* Toggle Button */}
           <div className="flex justify-center mb-6">
+            {/* bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-lg shadow-md hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 */}
             <button
-              className="px-6 py-2 bg-gradient-to-r from-blue-400 to-purple-600 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
+              className="px-6 py-2 bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold rounded-full shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300"
               onClick={() => setIsOpen(!isOpen)}
             >
               {isOpen ? "Hide Skills" : "Show Skills"}
@@ -496,7 +497,7 @@ const About = () => {
 
 
         <div className="mt-16 relative overflow-hidden">
-          <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+          <h3 className="text-xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-500 mb-6">
             AI Tools I Use
           </h3>
 

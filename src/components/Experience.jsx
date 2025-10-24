@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import {
   BriefcaseIcon,
   CalendarIcon,
-  MapPinIcon as LocationMarkerIcon,
+  MapPinIcon,
 } from "@heroicons/react/24/outline";
+
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 import hackchainLogo from "../assets/logos/hackchain.png";
 import gssocLogo from "../assets/logos/gssoc.png";
@@ -89,97 +92,94 @@ const Experience = () => {
           />
         </motion.div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-blue-400 to-purple-500 hidden lg:block" />
-
-          <div className="space-y-16">
-            {experiences.map((exp, index) => (
+        <VerticalTimeline>
+          {experiences.map((exp, idx) => (
+            <VerticalTimelineElement
+              key={idx}
+              className="vertical-timeline-element--work"
+              contentStyle={{
+                background: "transparent",
+                boxShadow: "none",
+                padding: "0",
+              }}
+              contentArrowStyle={{ borderRight: "7px solid rgb(59,130,246)" }} // blue-500
+              // date={exp.duration}
+              iconStyle={{
+                background: "linear-gradient(135deg, #3b82f6, #06b6d4)", // blue to cyan
+                color: "#fff",
+                boxShadow: "0 4px 15px rgba(59,130,246,0.4)",
+              }}
+              icon={
+                <img
+                  src={exp.logo}
+                  alt={`${exp.company} Logo`}
+                  className="w-full h-full object-contain rounded-full p-2 bg-white"
+                />
+              }
+            >
               <motion.div
-                key={exp.company}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative flex flex-col lg:flex-row items-center ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
+                whileHover={{
+                  y: -6,
+                  boxShadow:
+                    "0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04)",
+                }}
+                transition={{ duration: 0.3 }}
+                className="bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-xl p-8 transition-all duration-300 hover:border-blue-300 dark:hover:border-blue-600"
               >
-                {/* Logo on the timeline */}
-                <motion.div
-                  className="absolute lg:left-1/2 left-8 transform -translate-x-1/2 -translate-y-4 lg:translate-y-0 w-16 h-16 bg-white dark:bg-gray-800 rounded-full shadow-lg border-4 border-blue-100 dark:border-gray-700 overflow-hidden flex items-center justify-center z-20"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <img
-                    src={exp.logo}
-                    alt={exp.company}
-                    className="w-10 h-10 object-contain"
-                  />
-                </motion.div>
-
-                {/* Card with proper margins */}
-                <div
-                  className={`mt-12 lg:mt-0 w-full lg:w-5/12 ${index % 2 === 0
-                      ? "lg:mr-auto lg:pr-16" // Right side with margin from timeline
-                      : "lg:ml-auto lg:pl-16" // Left side with margin from timeline
-                    }`}
-                >
-                  <motion.div
-                    whileHover={{
-                      y: -5,
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                    }}
-                    className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 hover:border-blue-200 dark:hover:border-blue-600 transition-all duration-300"
-                  >
-                    {/* Position and Company */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 text-blue-600 dark:text-blue-400 mb-2">
-                          <BriefcaseIcon className="w-5 h-5" />
-                          <span className="font-semibold text-lg">{exp.position}</span>
-                        </div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                          {exp.company}
-                        </h3>
-                      </div>
+                {/* Header Section */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400">
+                      <BriefcaseIcon className="w-5 h-5" />
+                      <span className="font-semibold text-lg">{exp.position}</span>
                     </div>
-
-                    {/* Duration and Location */}
-                    <div className="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400 mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
-                      <div className="flex items-center gap-2">
-                        <CalendarIcon className="w-4 h-4 text-purple-500" />
-                        <span className="font-medium">{exp.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <LocationMarkerIcon className="w-4 h-4 text-green-500" />
-                        <span className="font-medium">{exp.location}</span>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <ul className="space-y-3">
-                      {exp.description.map((item, i) => (
-                        <motion.li
-                          key={i}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: i * 0.1 }}
-                          className="flex items-start gap-3 text-gray-700 dark:text-gray-300 leading-relaxed"
-                        >
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0" />
-                          <span>{item}</span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+                      {exp.company}
+                    </h3>
+                  </div>
                 </div>
+
+                {/* Duration + Location */}
+                <div className="flex flex-wrap gap-6 text-sm text-gray-600 dark:text-gray-400 mb-6 pb-4 border-b border-gray-100 dark:border-gray-700">
+                  {exp.duration && (
+                    <div className="flex items-center gap-2">
+                      <CalendarIcon className="w-4 h-4 text-purple-500" />
+                      <span className="font-medium">{exp.duration}</span>
+                    </div>
+                  )}
+                  {exp.location && (
+                    <div className="flex items-center gap-2">
+                      <MapPinIcon className="w-4 h-4 text-green-500" />
+                      <span className="font-medium">{exp.location}</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Description Points */}
+                <ul className="space-y-3">
+                  {exp.description.map((item, i) => (
+                    <motion.li
+                      key={i}
+                      initial={{ opacity: 0, x: -15 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.08 }}
+                      className="flex items-start gap-3 text-gray-700 dark:text-gray-300 leading-relaxed"
+                    >
+                      <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full mt-2 flex-shrink-0 shadow-md" />
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
               </motion.div>
-            ))}
-          </div>
-        </div>
+            </VerticalTimelineElement>
+
+          ))}
+        </VerticalTimeline>
       </div>
     </section>
   );
 };
 
 export default Experience;
+
+
