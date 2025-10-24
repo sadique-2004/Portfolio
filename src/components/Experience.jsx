@@ -22,7 +22,7 @@ const Experience = () => {
       duration: "Sep 2025 - Present",
       location: "On-site",
       description: [
-        "Mentoring students in frontend technologies — HTML5, CSS3, ES6, React, and Tailwind CSS.",
+        "Mentoring students in frontend technologies — HTML5, CSS3, ES6-JS, React, and Tailwind CSS.",
         "Guiding them to create professional portfolios, LinkedIn profiles, and real-world projects.",
       ],
 

@@ -107,7 +107,7 @@ const Education = () => {
         </div>
       </div>
 
-      <div className="text-center mt-20 pt-16 border-t border-gray-200 dark:border-gray-700">
+      <div className="text-center mt-20 pt-16 border-t border-gray-200 dark:border-gray-700 mx-4">
         <div className="inline-flex items-center space-x-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl px-8 py-6 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
           <div className="flex -space-x-2">   
             <div className="w-12 h-12 bg-yellow-500 rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
